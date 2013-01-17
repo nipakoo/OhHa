@@ -16,10 +16,15 @@ public class PalikanLiikuttaja {
     }
     
     public void liikutaPalikkaa(int x, int y) {
+        if (osuisikoPalikkaSeinaan(x, y)) {
+            return;
+        }
+        
         for (int i = 0; i < palikka.getRuudut().size(); i++) {
             palikka.getRuudut().get(i).tyhjennaRuutu();
-            palikka.getRuudut().set(i, palikka.getKentta().getRuutu
+            palikka.getRuudut().set(i, palikka.getRuutu
                     (palikka.getRuudut().get(i).getX() + x, palikka.getRuudut().get(i).getY() + y));
+            
         }
         
         palikka.getKentta().taytaRuudut(palikka.getRuudut());
@@ -35,5 +40,21 @@ public class PalikanLiikuttaja {
     
     public void liikuOikealle() {
         liikutaPalikkaa(1, 0);
+    }
+    
+    public boolean osuisikoPalikkaSeinaan(int x, int y) {
+        for (int i = 0; i < palikka.getRuudut().size(); i++) {
+            if (palikka.getRuudut().get(i).getY() + y > 19) {
+                return true;
+            } else if (palikka.getRuudut().get(i).getY() + y < 0) {
+                return true;
+            } else if (palikka.getRuudut().get(i).getX() + x > 9) {
+                return true;
+            } else if (palikka.getRuudut().get(i).getX() + x < 0) {
+                return true;
+            }
+        }
+        
+        return false;
     }
 }

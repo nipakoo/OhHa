@@ -26,6 +26,10 @@ public class Kentta {
         return rivit.get(y).getRuudut().get(x);
     }
     
+    public List<Rivi> getRivit() {
+        return rivit;
+    }
+    
     public void taytaRuudut(List<Ruutu> ruudut) {
         for (Ruutu ruutu : ruudut) {
             ruutu.taytaRuutu();

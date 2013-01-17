@@ -1,0 +1,20 @@
+Aihe: Moninpelattava Tetris
+
+Toteutan Tetris-pelin, joka yksinpelin lisäksi tarjoaa mahdollisuuden pelata muita pelaajia vastaan reaaliajassa. Moninpelissä voittaja on luonnollisesti pelaaja, joka on viimeisenä jäljellä ja tällöinkin hän tietysti voi pelata niin pitkälle kuin pääsee, jottai voi tavoitella paikkaa pistetilastossa.
+	Peliin luodaan salasanalla suojattu käyttäjätunnus, ja huippupistetilaston lisäksi pidetään kirjaa myös siitä, kuinka paljon muita pelaajia vastaan taisteltuja tetris-kamppailuja on kukin käyttäjä voittanut.
+
+Käyttäjät: Pelaaja
+
+Kaikkien käyttäjien toiminnot:
+	– käyttäjätunnuksen luominen
+		– onnistuu jos käyttäjätunnus on vapaana
+	– huipputulosten tarkastelu
+	– käytettävien näppäinten valitseminen kullekin pelaajalle
+
+Pelaajan toiminnot:
+	– pelin aloittaminen
+		– valittava monellako pelaajalla pelataan
+	– oman ja muiden pelaajien profiilien (henkilökohtaisten 	tulosten) tarkastelu
+		
+
+

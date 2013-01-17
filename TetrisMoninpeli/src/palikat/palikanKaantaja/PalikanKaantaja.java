@@ -17,7 +17,7 @@ public abstract class PalikanKaantaja {
     }
     
     public void siirraRuutua(int monesko, int x, int y) {
-        palikka.getRuudut().set(monesko, palikka.getKentta().getRuutu
+        palikka.getRuudut().set(monesko, palikka.getRuutu
                 (palikka.getRuudut().get(monesko).getX() + x, palikka.getRuudut().get(monesko).getY() + y));
     }
     

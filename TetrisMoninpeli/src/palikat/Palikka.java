@@ -14,6 +14,7 @@ import palikat.palikanKaantaja.LKaantaja;
 import palikat.palikanKaantaja.MutkanKaantaja;
 import palikat.palikanKaantaja.PalikanKaantaja;
 import palikat.palikanKaantaja.SuorakulmionKaantaja;
+import palikat.palikanKaantaja.TKaantaja;
 import tetris.Kentta;
 import tetris.Ruutu;
 
@@ -34,7 +35,7 @@ public  class Palikka {
         this.kentta = kentta;
         muodonLuoja = new MuodonLuoja(this);
         
-        palikanTyyppi = arpoja.nextInt(4);
+        palikanTyyppi = arpoja.nextInt(5);
         palikanAsento = 0;
         
         if (palikanTyyppi == 0) {
@@ -46,9 +47,12 @@ public  class Palikka {
         } else if (palikanTyyppi == 2) {
             ruudut = muodonLuoja.luoMutka(arpoja.nextInt(8));
             palikanKaantaja = new MutkanKaantaja(this);
-        } else {
+        } else if (palikanTyyppi == 3) {
             ruudut = muodonLuoja.luoL(arpoja.nextInt(8));
             palikanKaantaja = new LKaantaja(this);
+        } else {
+            ruudut = muodonLuoja.luoT(arpoja.nextInt(8));
+            palikanKaantaja = new TKaantaja(this);
         }
         
         this.kentta.taytaRuudut(ruudut);
@@ -57,7 +61,11 @@ public  class Palikka {
     }
     
     public Kentta getKentta() {
-        return this.kentta;
+        return kentta;
+    }
+    
+    public Ruutu getRuutu(int x, int y) {
+        return kentta.getRuutu(x, y);
     }
     
     public List<Ruutu> getRuudut() {
@@ -78,6 +86,10 @@ public  class Palikka {
     
     public int getAsento() {
         return palikanAsento;
+    }
+    
+    public int getTyyppi() {
+        return palikanTyyppi;
     }
     
     public void kaanna() {
