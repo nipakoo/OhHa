@@ -1,13 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package palikat;
 
-/**
- *
- * @author albis
- */
 import java.util.List;
 import java.util.Random;
 import palikat.palikanKaantaja.LKaantaja;
@@ -97,20 +89,9 @@ public  class Palikka {
         
         palikanKaantaja.kaanna();
         
-        for (Ruutu ruutu : ruudut) {
-            if (!ruutu.onkoTyhja()) {
-                takaisinEdelliseenAsentoon();              
-                return;
-            }
-        }
-        
-        for (int i = 0; i < ruudut.size(); i++) {
-            if (ruudut.get(i).getX() < 0 || ruudut.get(i).getX() > 9 ||
-                    ruudut.get(i).getY() < 0 || ruudut.get(i).getY() > 19) {
-                
-                takaisinEdelliseenAsentoon();    
-                return;
-            }
+        if (meneekoReunojenYli() || osuukoMuihinPalikoihin()) {
+            takaisinEdelliseenAsentoon();
+            return;
         }
         
         kentta.taytaRuudut(ruudut);  
@@ -121,11 +102,30 @@ public  class Palikka {
         }
     }
     
+    public boolean osuukoMuihinPalikoihin() {
+        for (Ruutu ruutu : ruudut) {
+            if (!ruutu.onkoTyhja()) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean meneekoReunojenYli() {
+        for (int i = 0; i < ruudut.size(); i++) {
+            if (ruudut.get(i).getX() < 0 || ruudut.get(i).getX() > 9 ||
+                    ruudut.get(i).getY() < 0 || ruudut.get(i).getY() > 19) {
+                   
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public void takaisinEdelliseenAsentoon() {
         for (int j = 0; j < 3; j++) {
                     palikanKaantaja.kaanna();
         }
-        
         kentta.taytaRuudut(ruudut);
     }
 }
