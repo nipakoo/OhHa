@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="albis-AO756" name="tetris.RiviTest" tests="2" time="0.113" timestamp="2013-01-22T16:43:35">
+<testsuite errors="0" failures="0" hostname="albis-AO756" name="tetris.RiviTest" tests="2" time="0.096" timestamp="2013-01-28T21:47:56">
   <properties>
     <property name="default.javac.source" value="1.6" />
     <property name="file.encoding.pkg" value="sun.io" />
@@ -44,7 +44,7 @@
     <property name="libs.eclipselink.javadoc" value="" />
     <property name="libs.absolutelayout.javadoc" value="" />
     <property name="libs.junit_4.maven-pom" value="" />
-    <property name="netbeans.buildnumber" value="0.3.12" />
+    <property name="netbeans.buildnumber" value="0.3.14" />
     <property name="ant.project.invoked-targets" value="test" />
     <property name="jna.platform.library.path" value="/usr/lib/i386-linux-gnu:/lib/i386-linux-gnu:/usr/lib32:/lib32:/usr/lib:/lib" />
     <property name="annotation.processing.run.all.processors" value="true" />
@@ -85,7 +85,7 @@
     <property name="libs.JAXB-ENDORSED.src" value="" />
     <property name="libs.hibernate-persistence.javadoc" value="" />
     <property name="libs.ejb3-persistence.classpath" value="/home/albis/netbeans-7.2/java/modules/ext/hibernate/ejb3-persistence.jar" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tetris.RiviTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/albis/OhHa/TetrisWars/build/test/results/TEST-tetris.RiviTest.xml crashfile=/home/albis/OhHa/TetrisWars/build/junitvmwatcher5780154623742025481.properties propsfile=/home/albis/OhHa/TetrisWars/build/junit7797358479689275947.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tetris.RiviTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/albis/OhHa/TetrisWars/build/test/results/TEST-tetris.RiviTest.xml crashfile=/home/albis/OhHa/TetrisWars/build/junitvmwatcher320614741462866486.properties propsfile=/home/albis/OhHa/TetrisWars/build/junit4746475694791844604.properties" />
     <property name="built-jar.properties" value="/home/albis/OhHa/TetrisWars/build/built-jar.properties" />
     <property name="libs.junit.src" value="" />
     <property name="ant.junit.enabletestlistenerevents" value="true" />
@@ -216,7 +216,7 @@
     <property name="javadoc.use" value="true" />
     <property name="sun.cpu.isalist" value="" />
     <property name="java.ext.dirs" value="/home/albis/jdk1.6.0_34/jre/lib/ext:/usr/java/packages/lib/ext" />
-    <property name="os.version" value="3.2.0-35-generic" />
+    <property name="os.version" value="3.2.0-36-generic" />
     <property name="netbeans.default_userdir_root" value="/home/albis/.netbeans" />
     <property name="excludes" value="" />
     <property name="user.home" value="/home/albis" />
@@ -259,7 +259,7 @@
     <property name="debug.test.classpath" value=":build/classes:/home/albis/netbeans-7.2/platform/modules/ext/junit-4.10.jar:build/test/classes" />
     <property name="nb.junit.batch" value="true" />
     <property name="libs.beans-binding.classpath" value="/home/albis/netbeans-7.2/java/modules/ext/beansbinding-1.2.1.jar" />
-    <property name="main.class" value="harjoitustyo.Harjoitustyo" />
+    <property name="main.class" value="tetris.Main" />
     <property name="have.tests" value="true" />
     <property name="libs.JWSAntTasks.maven-pom" value="" />
     <property name="java.util.logging.config.class" value="org.netbeans.core.startup.TopLogging" />
@@ -286,8 +286,8 @@
     <property name="mkdist.disabled" value="false" />
     <property name="sun.arch.data.model" value="32" />
   </properties>
-  <testcase classname="tetris.RiviTest" name="oikeaMaaraRuutuja" time="0.013" />
-  <testcase classname="tetris.RiviTest" name="ruutujenKorkeusOikein" time="0.0" />
+  <testcase classname="tetris.RiviTest" name="oikeaMaaraRuutuja" time="0.0030" />
+  <testcase classname="tetris.RiviTest" name="ruutujenKorkeusOikein" time="0.0010" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

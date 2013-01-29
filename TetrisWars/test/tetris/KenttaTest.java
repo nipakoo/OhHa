@@ -1,17 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tetris;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- *
- * @author albis
- */
 public class KenttaTest {
     Kentta kentta;
     
@@ -33,5 +25,78 @@ public class KenttaTest {
         kentta.taytaRuudut(kentta.getRivit().get(0).getRuudut());
         
         assertFalse(kentta.getRivit().get(0).getRuudut().get(0).onkoTyhja());
+    }
+    
+    @Test
+    public void ruutujenTyhjennysOnnistuu() {
+        kentta.taytaRuudut(kentta.getRivit().get(19).getRuudut());
+        kentta.tyhjennaRuudut(kentta.getRivit().get(19).getRuudut());
+        
+        assertTrue(kentta.getRivit().get(19).getRuudut().get(9).onkoTyhja());
+    }
+    
+    @Test
+    public void liikkuukoOikealle() {
+        int haluttuX = 9;
+        if (kentta.getPalikka().getTyyppi() == 4) {
+            haluttuX = 8;
+        }
+        
+        if (kentta.getPalikka().getRuudut().get(3).getX() + 3 < 9) {
+            haluttuX = kentta.getPalikka().getRuudut().get(3).getX() + 3;
+        }
+        
+        for (int i = 0; i < 3; i++) {
+            kentta.liikuOikealle();
+        }
+        
+        assertEquals(haluttuX, kentta.getPalikka().getRuudut().get(3).getX());
+    }
+    
+    @Test
+    public void liikkuukoVasemmalle() {
+        int haluttuX = 0;
+        if (kentta.getPalikka().getRuudut().get(0).getX() - 3 > 0) {
+            haluttuX = kentta.getPalikka().getRuudut().get(0).getX() - 3;
+        }
+        
+        for (int i = 0; i < 3; i++) {
+            kentta.liikuVasemmalle();
+        }
+        
+        assertEquals(haluttuX, kentta.getPalikka().getRuudut().get(0).getX());
+    }
+    
+    @Test
+    public void liikkuukoAlas() {
+        int haluttuY = 0;
+        if (kentta.getPalikka().getRuudut().get(0).getY() + 3 > 0) {
+            haluttuY = kentta.getPalikka().getRuudut().get(0).getY() + 3;
+        }
+        
+        for (int i = 0; i < 3; i++) {
+            kentta.liikuAlas();
+        }
+        
+        assertEquals(haluttuY, kentta.getPalikka().getRuudut().get(0).getY());
+    }
+    
+    @Test
+    public void asentoMuuttuuKaantyessa() {
+        if (kentta.getPalikka().getRuudut().get(0).getX() < 2) {
+            kentta.liikuOikealle();
+        } else if (kentta.getPalikka().getRuudut().get(3).getX() > 7) {
+            kentta.liikuVasemmalle();
+        }
+        
+        kentta.liikuAlas();
+        kentta.liikuAlas();
+        kentta.liikuAlas();
+        kentta.liikuAlas();
+        
+        kentta.getPalikka().kaanna();
+        kentta.getPalikka().kaanna();
+        
+        assertEquals(kentta.getPalikka().getAsento(), 2);
     }
 }

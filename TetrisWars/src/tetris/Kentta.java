@@ -1,16 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tetris;
 
-/**
- *
- * @author albis
- */
 import java.util.ArrayList;
 import java.util.List;
-import palikat.Palikka;
+import tetris.palikat.Palikka;
 
 public class Kentta {
     private List<Rivi> rivit;
@@ -24,6 +16,14 @@ public class Kentta {
         }
         
         palikka = new Palikka(this);
+    }
+    
+    public void uusiPalikka() {
+        palikka = new Palikka(this);
+    }
+    
+    public Palikka getPalikka() {
+        return palikka;
     }
     
     public Ruutu getRuutu(int x, int y) {
@@ -50,15 +50,21 @@ public class Kentta {
         palikka.kaanna();
     }
     
-    public void liikutaPalikkaaVasemmalle() {
+    public void liikuAlas() {
+        palikka.getPalikanLiikuttaja().liikuAlas();
     }
     
-    public void liikutaPalikkaaOikealle() {
+    public void liikuVasemmalle() {
+        palikka.getPalikanLiikuttaja().liikuVasemmalle();
     }
     
-    public void liikutaPalikkaaAlas() {
+    public void liikuOikealle() {
+        palikka.getPalikanLiikuttaja().liikuOikealle();
     }
     
     public void pudotaPalikka() {
+        for (int i = 0; i < rivit.size(); i++) {
+            liikuAlas();
+        }
     }
 }
