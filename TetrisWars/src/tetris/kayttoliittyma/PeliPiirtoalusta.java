@@ -3,15 +3,15 @@ package tetris.kayttoliittyma;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
-import tetris.Kentta;
-import tetris.Rivi;
-import tetris.Ruutu;
+import tetris.pelikentta.Kentta;
+import tetris.pelikentta.Rivi;
+import tetris.pelikentta.Ruutu;
 
-public class Piirtoalusta extends JPanel {
+public class PeliPiirtoalusta extends JPanel {
     private Kentta kentta;
     private int sivunPituus;
     
-    public Piirtoalusta(Kentta kentta, int sivunPituus) {
+    public PeliPiirtoalusta(Kentta kentta, int sivunPituus) {
         super.setBackground(Color.black);
         this.kentta = kentta;
         this.sivunPituus = sivunPituus;
@@ -24,19 +24,21 @@ public class Piirtoalusta extends JPanel {
         for (Rivi rivi : kentta.getRivit()) {
             for (Ruutu ruutu : rivi.getRuudut()) {
                 if (!ruutu.onkoTyhja()) {
-                    grafiikka.setColor(Color.yellow);
+                    grafiikka.setColor(Color.green);
                     grafiikka.fill3DRect(sivunPituus * ruutu.getX(), sivunPituus * ruutu.getY(),
                             sivunPituus, sivunPituus, true);
-                } else if (kentta.getPalikka().getRuudut().contains(ruutu)) {
+                }
+                if (kentta.getPalikka().getRuudut().contains(ruutu)) {
                     grafiikka.setColor(Color.blue);
                     grafiikka.fill3DRect(sivunPituus * ruutu.getX(), sivunPituus * ruutu.getY(),
                             sivunPituus, sivunPituus, true);
                 }
+                if (kentta.tuhottavaRivi > -1) {
+                    grafiikka.setColor(Color.yellow);
+                    grafiikka.fill3DRect(0, kentta.tuhottavaRivi * sivunPituus,
+                            sivunPituus * 10, sivunPituus, true);
+                }
             }
         }
-    }
-    
-    public void piirraUudestaan() {
-        repaint();
     }
 }

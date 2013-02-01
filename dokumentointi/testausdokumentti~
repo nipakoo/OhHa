@@ -22,11 +22,11 @@ Scanner lukija = new Scanner(System.in);
             String komento = lukija.nextLine();
             
             if (komento.equals("d")) {
-                kentta.liikutaPalikkaaOikealle();
+                kentta.liikuOikealle();
             } else if (komento.equals("a")) {
-                kentta.liikutaPalikkaaVasemmalle();
+                kentta.liikuVasemmalle();
             } else if (komento.equals("s")) {
-                kentta.liikutaPalikkaaAlas();
+                kentta.liikuAlas();
             } else if (komento.equals("w")) {
                 kentta.kaannaPalikkaa();
             } else if (komento.equals("x")) {

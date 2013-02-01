@@ -39,17 +39,11 @@ public class MutkanKaantaja extends PalikanKaantaja {
     public boolean tarkistaOsuisikoSeinaanTaiPalikkaan(int mistaAsennosta) {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, mistaAsennosta * 2, mistaAsennosta * -1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(1, mistaAsennosta * 1, mistaAsennosta * 0)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(1, mistaAsennosta * 1, mistaAsennosta * 0)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, mistaAsennosta * 0, mistaAsennosta * -1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, mistaAsennosta * 0, mistaAsennosta * -1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, mistaAsennosta * -1, mistaAsennosta * 0)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, mistaAsennosta * -1, mistaAsennosta * 0)) {
             return true;
         }
         

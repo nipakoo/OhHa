@@ -1,34 +1,30 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tetris.kayttoliittyma;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Frame;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
-import tetris.Kentta;
+import tetris.Peli;
 
-/**
- *
- * @author albis
- */
-public class Kayttoliittyma implements Runnable {
+public class PeliKayttoliittyma implements Runnable {
     private JFrame frame;
-    private Kentta kentta;
+    private Peli peli;
+    PeliPiirtoalusta piirtoalusta;
+    private int leveys;
     
-    public Kayttoliittyma() {   
+    public PeliKayttoliittyma(Peli peli) {
+        this.peli = peli;
+        leveys = 300;
     }
     
     @Override
     public void run() {
         frame = new JFrame("TetrisWars");
-        kentta = new Kentta();
         
-        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+        frame.setPreferredSize(new Dimension(leveys, leveys * 2));
         //frame.setUndecorated(true);
         
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -40,22 +36,17 @@ public class Kayttoliittyma implements Runnable {
     }
     
     private void luoKomponentit(Container container) {
-        container.setLayout(new BorderLayout());
-
-        int leveys = 200;
-        JPanel rata = new JPanel();
-        rata.setSize(leveys, leveys * 2);
+        piirtoalusta = new PeliPiirtoalusta(peli.getKentta(), leveys / 10);
         
-        rata.add(new Piirtoalusta(kentta, leveys / 10));
-        
-        container.add(rata, BorderLayout.CENTER);
-    }
-    
-    public void piirraUudelleen() {
-        
+        frame.add(piirtoalusta);
+        frame.addKeyListener(new PeliNappaimistonKuuntelija(peli.getKentta(), piirtoalusta));
     }
     
     public JFrame getFrame() {
         return frame;
+    }
+    
+    public PeliPiirtoalusta getPiirtoalusta() {
+        return piirtoalusta;
     }
 }

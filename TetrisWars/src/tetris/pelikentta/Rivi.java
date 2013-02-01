@@ -1,4 +1,4 @@
-package tetris;
+package tetris.pelikentta;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,5 +19,22 @@ public class Rivi {
     
     public List<Ruutu> getRuudut() {
         return ruudut;
+    }
+    
+    public boolean tarkistaTuhoutuukoRivi() {
+        for (Ruutu ruutu : ruudut) {
+            if (ruutu.onkoTyhja()) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    public void laskeRiviaYksiAlas() {
+        y++;
+        for (Ruutu ruutu : ruudut) {
+            ruutu.setY(y);
+        }
     }
 }

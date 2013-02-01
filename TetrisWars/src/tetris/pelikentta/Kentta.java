@@ -1,4 +1,4 @@
-package tetris;
+package tetris.pelikentta;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,7 @@ import tetris.palikat.Palikka;
 public class Kentta {
     private List<Rivi> rivit;
     private Palikka palikka;
+    public int tuhottavaRivi;
     
     public Kentta() {
         rivit = new ArrayList<Rivi>();
@@ -16,6 +17,7 @@ public class Kentta {
         }
         
         palikka = new Palikka(this);
+        tuhottavaRivi = -1;
     }
     
     public void uusiPalikka() {
@@ -28,6 +30,10 @@ public class Kentta {
     
     public Ruutu getRuutu(int x, int y) {
         return rivit.get(y).getRuudut().get(x);
+    }
+    
+    public void setRivi(Rivi rivi, int monesko) {
+        rivit.set(monesko, rivi);
     }
     
     public List<Rivi> getRivit() {
@@ -50,21 +56,35 @@ public class Kentta {
         palikka.kaanna();
     }
     
-    public void liikuAlas() {
+    public void liikutaPalikkaaAlas() {
         palikka.getPalikanLiikuttaja().liikuAlas();
     }
     
-    public void liikuVasemmalle() {
+    public void liikutaPalikkaaVasemmalle() {
         palikka.getPalikanLiikuttaja().liikuVasemmalle();
     }
     
-    public void liikuOikealle() {
+    public void liikutaPalikkaaOikealle() {
         palikka.getPalikanLiikuttaja().liikuOikealle();
     }
     
     public void pudotaPalikka() {
         for (int i = 0; i < rivit.size(); i++) {
-            liikuAlas();
+            liikutaPalikkaaAlas();
         }
+    }
+    
+    public boolean pysahtyykoPalikka() {
+        tyhjennaRuudut(palikka.getRuudut());
+        
+        for (int i = 0; i < palikka.getRuudut().size(); i++) {
+            if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(i, 0, 1)) {
+                taytaRuudut(palikka.getRuudut());
+                return true;
+            }
+        }
+        
+        taytaRuudut(palikka.getRuudut());
+        return false;
     }
 }

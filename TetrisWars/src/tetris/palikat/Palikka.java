@@ -7,8 +7,8 @@ import tetris.palikat.palikanKaantaja.MutkanKaantaja;
 import tetris.palikat.palikanKaantaja.PalikanKaantaja;
 import tetris.palikat.palikanKaantaja.SuorakulmionKaantaja;
 import tetris.palikat.palikanKaantaja.TKaantaja;
-import tetris.Kentta;
-import tetris.Ruutu;
+import tetris.pelikentta.Kentta;
+import tetris.pelikentta.Ruutu;
 
 public  class Palikka {
     private Kentta kentta;

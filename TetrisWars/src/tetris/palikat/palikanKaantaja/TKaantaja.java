@@ -74,13 +74,9 @@ public class TKaantaja extends PalikanKaantaja {
     public boolean tarkistaOsuisikoAsennon0TSeinaanTaiPalikkaan() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, 1, -1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, -1, 1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, -1, 1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, -1, -1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, -1, -1)) {
             return true;
         }
         
@@ -90,13 +86,9 @@ public class TKaantaja extends PalikanKaantaja {
     public boolean tarkistaOsuisikoAsennon1TSeinaanTaiPalikkaan() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, 1, 1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, -1, -1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, -1, -1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, 1, -1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, 1, -1)) {
             return true;
         }
         
@@ -106,13 +98,9 @@ public class TKaantaja extends PalikanKaantaja {
     public boolean tarkistaOsuisikoAsennon2TSeinaanTaiPalikkaan() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, -1, 1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, 1, -1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, 1, -1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, 1, 1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, 1, 1)) {
             return true;
         }
         
@@ -122,13 +110,9 @@ public class TKaantaja extends PalikanKaantaja {
     public boolean tarkistaOsuisikoAsennon3TSeinaanTaiPalikkaan() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, -1, -1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, 1, 1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, 1, 1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, -1, 1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, -1, 1)) {
             return true;
         }
         

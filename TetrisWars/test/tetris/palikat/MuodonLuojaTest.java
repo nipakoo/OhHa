@@ -7,8 +7,8 @@ import java.util.List;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import tetris.Kentta;
-import tetris.Ruutu;
+import tetris.pelikentta.Kentta;
+import tetris.pelikentta.Ruutu;
 
 public class MuodonLuojaTest {
     MuodonLuoja muodonLuoja;

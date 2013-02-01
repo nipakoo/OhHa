@@ -1,6 +1,6 @@
 package tetris.palikat;
 
-import tetris.Ruutu;
+import tetris.pelikentta.Ruutu;
 
 public class PalikanLiikuttaja {
 
@@ -19,13 +19,9 @@ public class PalikanLiikuttaja {
     public boolean osuisikoSeinaanTaiPalikkaan(int monesko, int x, int y) {
         if (laskeUusiX(monesko, x) < 0 || laskeUusiX(monesko, x) > 9) {
             return true;
-        }
-        
-        if (laskeUusiY(monesko, y) < 0 || laskeUusiY(monesko, y) > 19) {
+        } else if (laskeUusiY(monesko, y) < 0 || laskeUusiY(monesko, y) > 19) {
             return true;
-        }
-        
-        if (!palikka.getRuutu(laskeUusiX(monesko, x), laskeUusiY(monesko, y)).onkoTyhja()) {
+        } else if (!palikka.getRuutu(laskeUusiX(monesko, x), laskeUusiY(monesko, y)).onkoTyhja()) {
             return true;
         }
         

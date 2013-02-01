@@ -38,13 +38,9 @@ public class SuorakulmionKaantaja extends PalikanKaantaja {
     public boolean tarkistaOsuisikoSeinaanTaiPalikkaan(int mistaAsennosta) {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, mistaAsennosta * 1, mistaAsennosta * -1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, mistaAsennosta * -1, mistaAsennosta * 1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, mistaAsennosta * -1, mistaAsennosta * 1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, mistaAsennosta * -2, mistaAsennosta * 2)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, mistaAsennosta * -2, mistaAsennosta * 2)) {
             return true;
         }
         

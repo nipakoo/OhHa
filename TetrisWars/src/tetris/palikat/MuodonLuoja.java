@@ -2,7 +2,7 @@ package tetris.palikat;
 
 import java.util.ArrayList;
 import java.util.List;
-import tetris.Ruutu;
+import tetris.pelikentta.Ruutu;
 
 public class MuodonLuoja {
     private List<Ruutu> ruudut;
@@ -18,10 +18,10 @@ public class MuodonLuoja {
     }
     
     public List<Ruutu> luoNelio(int alkuX) {
-        ruudut.add(0, palikka.getRuutu(alkuX, alkuY));
-        ruudut.add(1, palikka.getRuutu(alkuX, alkuY + 1));
-        ruudut.add(2, palikka.getRuutu(alkuX + 1, alkuY));
-        ruudut.add(3, palikka.getRuutu(alkuX + 1, alkuY + 1));
+        ruudut.add(palikka.getRuutu(alkuX, alkuY));
+        ruudut.add(palikka.getRuutu(alkuX, alkuY + 1));
+        ruudut.add(palikka.getRuutu(alkuX + 1, alkuY));
+        ruudut.add(palikka.getRuutu(alkuX + 1, alkuY + 1));
         
         return ruudut;
     }

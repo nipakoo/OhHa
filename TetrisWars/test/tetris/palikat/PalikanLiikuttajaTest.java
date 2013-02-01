@@ -5,8 +5,8 @@ import java.util.List;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import tetris.Kentta;
-import tetris.Ruutu;
+import tetris.pelikentta.Kentta;
+import tetris.pelikentta.Ruutu;
 
 public class PalikanLiikuttajaTest {
     Kentta kentta;
@@ -28,7 +28,7 @@ public class PalikanLiikuttajaTest {
         ruudut.add(new Ruutu(kentta.getPalikka().getRuudut().get(2).getX(), kentta.getPalikka().getRuudut().get(2).getY() + 1));
         ruudut.add(new Ruutu(kentta.getPalikka().getRuudut().get(3).getX(), kentta.getPalikka().getRuudut().get(3).getY() + 1));
         
-        kentta.liikuAlas();
+        kentta.liikutaPalikkaaAlas();
         
         assertTrue(kentta.getPalikka().getRuudut().equals(ruudut));
     }
@@ -40,7 +40,7 @@ public class PalikanLiikuttajaTest {
             haluttuX = 0;
         }
         
-        kentta.liikuVasemmalle();
+        kentta.liikutaPalikkaaVasemmalle();
         
         assertEquals(kentta.getPalikka().getRuudut().get(0).getX(), haluttuX);
     }
@@ -58,7 +58,7 @@ public class PalikanLiikuttajaTest {
             haluttuX = maksimi;
         }
         
-        kentta.liikuOikealle();
+        kentta.liikutaPalikkaaOikealle();
         
         assertEquals(kentta.getPalikka().getRuudut().get(3).getX(), haluttuX);
     }

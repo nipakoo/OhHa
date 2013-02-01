@@ -1,5 +1,6 @@
 package tetris;
 
+import tetris.pelikentta.Kentta;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,7 +48,7 @@ public class KenttaTest {
         }
         
         for (int i = 0; i < 3; i++) {
-            kentta.liikuOikealle();
+            kentta.liikutaPalikkaaOikealle();
         }
         
         assertEquals(haluttuX, kentta.getPalikka().getRuudut().get(3).getX());
@@ -61,7 +62,7 @@ public class KenttaTest {
         }
         
         for (int i = 0; i < 3; i++) {
-            kentta.liikuVasemmalle();
+            kentta.liikutaPalikkaaVasemmalle();
         }
         
         assertEquals(haluttuX, kentta.getPalikka().getRuudut().get(0).getX());
@@ -75,7 +76,7 @@ public class KenttaTest {
         }
         
         for (int i = 0; i < 3; i++) {
-            kentta.liikuAlas();
+            kentta.liikutaPalikkaaAlas();
         }
         
         assertEquals(haluttuY, kentta.getPalikka().getRuudut().get(0).getY());
@@ -84,15 +85,15 @@ public class KenttaTest {
     @Test
     public void asentoMuuttuuKaantyessa() {
         if (kentta.getPalikka().getRuudut().get(0).getX() < 2) {
-            kentta.liikuOikealle();
+            kentta.liikutaPalikkaaOikealle();
         } else if (kentta.getPalikka().getRuudut().get(3).getX() > 7) {
-            kentta.liikuVasemmalle();
+            kentta.liikutaPalikkaaVasemmalle();
         }
         
-        kentta.liikuAlas();
-        kentta.liikuAlas();
-        kentta.liikuAlas();
-        kentta.liikuAlas();
+        kentta.liikutaPalikkaaAlas();
+        kentta.liikutaPalikkaaAlas();
+        kentta.liikutaPalikkaaAlas();
+        kentta.liikutaPalikkaaAlas();
         
         kentta.getPalikka().kaanna();
         kentta.getPalikka().kaanna();

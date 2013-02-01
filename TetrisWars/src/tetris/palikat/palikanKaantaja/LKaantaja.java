@@ -77,17 +77,11 @@ public class LKaantaja extends PalikanKaantaja{
     public boolean tarkistaOsuisikoAsennon0LSeinaanTaiPalikkaan() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, 2, -1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(1, 1, 0)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(1, 1, 0)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, 0, 1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, 0, 1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, -1, 0)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, -1, 0)) {
             return true;
         }
         
@@ -97,17 +91,11 @@ public class LKaantaja extends PalikanKaantaja{
     public boolean tarkistaOsuisikoAsennon1LSeinaanTaiPalikkaan() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, 0, 2)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(1, -1, 1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(1, -1, 1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, -2, 0)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, -2, 0)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, -1, -1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, -1, -1)) {
             return true;
         }
         
@@ -117,17 +105,11 @@ public class LKaantaja extends PalikanKaantaja{
     public boolean tarkistaOsuisikoAsennon2LSeinaanTaiPalikkaan() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, -1, 0)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(1, 0, -1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(1, 0, -1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, 1, -2)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, 1, -2)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, 2, -1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, 2, -1)) {
             return true;
         }
         
@@ -137,13 +119,9 @@ public class LKaantaja extends PalikanKaantaja{
     public boolean tarkistaOsuisikoAsennon3LSeinaanTaiPalikkaan() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, -1, -1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, 1, 1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, 1, 1)) {
             return true;
-        }
-        
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, 0, 2)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, 0, 2)) {
             return true;
         }
         

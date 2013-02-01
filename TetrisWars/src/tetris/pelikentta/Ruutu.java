@@ -1,4 +1,4 @@
-package tetris;
+package tetris.pelikentta;
 
 public class Ruutu {
     private boolean onkoTyhja;
@@ -26,6 +26,10 @@ public class Ruutu {
     
     public int getX() {
         return x;
+    }
+    
+    public void setY(int y) {
+        this.y = y;
     }
     
     public int getY() {
