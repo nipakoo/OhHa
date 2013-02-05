@@ -4,7 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Rivi {
+    
+    /**
+     * Lista, joka sisältää riviin kuuluvat ruudut, näitä on aina 10 kappaletta.
+     */
     private List<Ruutu> ruudut;
+    
+    /**
+     * Kertoo tämän rivin korkeussijainnin kentällä.
+     */
     private int y;
     
     public Rivi(int y) {
@@ -21,6 +29,12 @@ public class Rivi {
         return ruudut;
     }
     
+    /**
+     * Tarkistetaan tuhoutuuko tämä rivi, eli ovatko kaikki tällä korkeudella olevat
+     * ruudut täysiä
+     * 
+     * @return Palautetaan false, jos yksikin ruuduista on tyhjä, muuten true 
+     */
     public boolean tarkistaTuhoutuukoRivi() {
         for (Ruutu ruutu : ruudut) {
             if (ruutu.onkoTyhja()) {
@@ -31,6 +45,10 @@ public class Rivi {
         return true;
     }
     
+    /**
+     * Laskee tämän rivin ja kaikkien tällä rivillä olevien ruutujen korkeussijaintia
+     * yhdellä.
+     */
     public void laskeRiviaYksiAlas() {
         y++;
         for (Ruutu ruutu : ruudut) {

@@ -2,12 +2,26 @@ package tetris.pelikentta;
 
 import java.util.ArrayList;
 import java.util.List;
+import tetris.palikat.PalikanLiikuttaja;
 import tetris.palikat.Palikka;
 
 public class Kentta {
+    
+    /**
+     * Lista, joka sisältää kenttään kuuluvat rivit, näitä on aina 20 kappaletta.
+     */
     private List<Rivi> rivit;
+    
+    /**
+     * Liikuteltavaa palikkaa kuvaava Palikka-olio.
+     */
     private Palikka palikka;
-    public int tuhottavaRivi;
+    
+    /**
+     * Rivit-listasta tuhottavan Rivi-olion indeksi, oletuksena arvona on -1, Peli-olio
+     * muuttaa arvon, jos rivi on täynnä ja se on tuhottava.
+     */
+    private int tuhottavaRivi;
     
     public Kentta() {
         rivit = new ArrayList<Rivi>();
@@ -18,6 +32,14 @@ public class Kentta {
         
         palikka = new Palikka(this);
         tuhottavaRivi = -1;
+    }
+    
+    public int getTuhottavaRivi() {
+        return tuhottavaRivi;
+    }
+    
+    public void setTuhottavaRivi(int uusiIndeksi) {
+        tuhottavaRivi = uusiIndeksi;
     }
     
     public void uusiPalikka() {
@@ -40,40 +62,88 @@ public class Kentta {
         return rivit;
     }
     
+    /**
+     * Muuttaa syötteenä annettun listan Ruutu-olioiden attribuutin onkoTyhja
+     * arvoksi totuusarvon false.
+     * 
+     * @param ruudut Syötteenä annettu lista
+     * 
+     * @see Ruutu#taytaRuutu()
+     */
     public void taytaRuudut(List<Ruutu> ruudut) {
         for (Ruutu ruutu : ruudut) {
             ruutu.taytaRuutu();
         }
     }
     
+    /**
+     * Muuttaa syötteenä annetun listan Ruutu-olioiden attribuutin onkoTyhja arvoksi
+     * totuusarvon true.
+     * 
+     * @param ruudut Syötteenä annettu lista
+     * 
+     * @see Ruutu#tyhjennaRuutu() 
+     */
     public void tyhjennaRuudut(List<Ruutu> ruudut) {
         for (Ruutu ruutu : ruudut) {
             ruutu.tyhjennaRuutu();
         }
     }
     
+    /**
+     * Kaantaa Palikkaa myötäpäivään.
+     * 
+     * @see Palikka#kaanna() 
+     */
     public void kaannaPalikkaa() {
         palikka.kaanna();
     }
     
+    /**
+     * Liikuttaa Palikka-oliota yhden ruudun alas päin.
+     * 
+     * @see PalikanLiikuttaja#liikuAlas() 
+     */
     public void liikutaPalikkaaAlas() {
         palikka.getPalikanLiikuttaja().liikuAlas();
     }
     
+    /**
+     * Liikuttaa Palikka-oliota yhden ruudun vasemmalle päin.
+     * 
+     * @see PalikanLiikuttaja#liikuVasemmalle() 
+     */
     public void liikutaPalikkaaVasemmalle() {
         palikka.getPalikanLiikuttaja().liikuVasemmalle();
     }
     
+    /**
+     * Liikuttaa Palikka-oliota yhden ruudun oikealle päin.
+     * 
+     * @see PalikanLiikuttaja#liikuOikealle() 
+     */
     public void liikutaPalikkaaOikealle() {
         palikka.getPalikanLiikuttaja().liikuOikealle();
     }
     
+    /**
+     * Pudottaa palikan niin alas kuin mahdollista, eli joko alimmalle riville asti tai
+     * niin kauan kuin tielle tulee täynnä oleva ruutu.
+     */
     public void pudotaPalikka() {
         for (int i = 0; i < rivit.size(); i++) {
             liikutaPalikkaaAlas();
         }
     }
     
+    /**
+     * Kertoo osuisiko palikka seinään tai täyteen ruutun liikkuessaan yhden alas.
+     * 
+     * @see PalikanLiikuttaja#osuisikoSeinaanTaiPalikkaan(int, int, int) 
+     * 
+     * @return Palauttaa false, jos palikka ei osuisi seinään liikkuessaan alas, true
+     * taas jos osuisi
+     */
     public boolean pysahtyykoPalikka() {
         tyhjennaRuudut(palikka.getRuudut());
         

@@ -33,9 +33,9 @@ public class PeliPiirtoalusta extends JPanel {
                     grafiikka.fill3DRect(sivunPituus * ruutu.getX(), sivunPituus * ruutu.getY(),
                             sivunPituus, sivunPituus, true);
                 }
-                if (kentta.tuhottavaRivi > -1) {
+                if (kentta.getTuhottavaRivi() > -1) {
                     grafiikka.setColor(Color.yellow);
-                    grafiikka.fill3DRect(0, kentta.tuhottavaRivi * sivunPituus,
+                    grafiikka.fill3DRect(0, kentta.getTuhottavaRivi() * sivunPituus,
                             sivunPituus * 10, sivunPituus, true);
                 }
             }

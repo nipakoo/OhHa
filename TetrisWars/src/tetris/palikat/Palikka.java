@@ -11,16 +11,46 @@ import tetris.pelikentta.Kentta;
 import tetris.pelikentta.Ruutu;
 
 public  class Palikka {
+    
+    /**
+     * Kentta-olio johon tämä palikka kuuluu.
+     */
     private Kentta kentta;
+    
+    /**
+     * Palikan käyttämä MuodonLuoja-olio, joka asettaa palikan ruudut
+     * haluttuun muotoon.
+     */
     private MuodonLuoja muodonLuoja;
     
     private Random arpoja = new Random();
+    
+    /**
+     * Palikan sisältämät ruudut.
+     */
     private List<Ruutu> ruudut;
     
+    /**
+     * Palikan tyypin lukuarvo: 0 = neliö, 1 = suorakulmio, 2 = mutka,
+     * 3 = L, 4 = T.
+     */
     private int palikanTyyppi;
+    
+    /**
+     * Palikan asennon lukuarvo: 0 = vaakaan, ruudut vasemmalta oikealle,
+     * 1 = pystyyn, ruudut ylhäältä alas, 2 = vaakaan, ruudut oikealta vasemmalle,
+     * 3 = pystyyn, ruudut alhaalta ylös.
+     */
     private int palikanAsento;
     
+    /**
+     * Palikan liikkumisesta huolehtiva olio.
+     */
     private PalikanLiikuttaja palikanLiikuttaja;
+    
+    /**
+     * Palikan kääntymisestä huolehtiva olio.
+     */
     private PalikanKaantaja palikanKaantaja;
     
     public Palikka(Kentta kentta) {
@@ -76,6 +106,10 @@ public  class Palikka {
         return palikanTyyppi;
     }
     
+    /**
+     * Kääntää palikkaa, jos ei mahtunut kääntymään täytetään ruudut ja palataan,
+     * jos mahtui kasvatetaan palikanAsento-attribuuttia yhdellä ja täytetään ruudut.
+     */
     public void kaanna() {
         if (palikanKaantaja.kaanna()) {
             kentta.taytaRuudut(ruudut);

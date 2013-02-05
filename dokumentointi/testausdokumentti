@@ -36,3 +36,11 @@ Scanner lukija = new Scanner(System.in);
             }
 
 Testit onnistuivat hyvin ja molempien, sekä kääntämis- että liikkumistoiminnon havaittiin toimivan.
+
+-----------------------------------------------------------
+
+1.2.2013
+
+Testattu palikoiden liikkumista ja kääntymistä graafisen käyttöliittymän ensimmäisellä versiolla. Palikat liikkuivat oikein, täydet rivit tuhoutuivat oikein ja ylemmät palikat tippuivat alas.
+
+-------------------------------------------------------------------

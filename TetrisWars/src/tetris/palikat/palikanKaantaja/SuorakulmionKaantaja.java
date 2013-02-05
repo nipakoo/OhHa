@@ -8,13 +8,27 @@ public class SuorakulmionKaantaja extends PalikanKaantaja {
         super(palikka);
     }
     
+    /**
+     * Ylikirjoittaa yliluokan kaanna-metodin kääntämällä palikkaa sen asennon edellyttämällä
+     * tavalla.
+     * 
+     * @see PalikanKaantaja#kaanna() 
+     * 
+     * @return Palauttaa totuusarvon false jos kääntäminen mahdutaan suorittamaan
+     */
     @Override
     public boolean kaanna() {
         return kaannaSuorakulmio();
     }
     
-    //jos palikka on pystyssä, käytetään siirtojen vastalukuja, jotta käännytään
-    //toiseen suuntaan
+    /**
+     * Jos palikka on pystyasennossa käytetään ruutujen siirtämiseen vastalukuja,
+     * jotta päästään takaisin vaaka-asentoon, tarkistetaan mahtuuko palikka kääntymään
+     * ja siirretään ruutuja jos mahdutaan.
+     * 
+     * @return Palauttaa true, jos palikka osuisi seinään tai toiseen palikkaan ja false
+     * jos kääntäminen onnistuu
+     */
     public boolean kaannaSuorakulmio() {
         int mistaAsennosta = 1;
         
@@ -35,6 +49,14 @@ public class SuorakulmionKaantaja extends PalikanKaantaja {
         return false;
     }
     
+    /**
+     * Tarkistetaan voidaanko palikkaa kääntää.
+     * 
+     * @param mistaAsennosta Jos palikka on pystyssä käytetään vaaka-asennosta kääntämisen
+     * vastalukuja
+     * 
+     * @return Jos palikan tiellä on täysiä ruutuja tai seinä palautetaan true, muuten false
+     */
     public boolean tarkistaOsuisikoSeinaanTaiPalikkaan(int mistaAsennosta) {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, mistaAsennosta * 1, mistaAsennosta * -1)) {
             return true;

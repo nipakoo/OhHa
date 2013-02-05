@@ -37,7 +37,7 @@ public class PeliKayttoliittyma implements Runnable {
     
     private void luoKomponentit(Container container) {
         piirtoalusta = new PeliPiirtoalusta(peli.getKentta(), leveys / 10);
-        
+
         frame.add(piirtoalusta);
         frame.addKeyListener(new PeliNappaimistonKuuntelija(peli.getKentta(), piirtoalusta));
     }
