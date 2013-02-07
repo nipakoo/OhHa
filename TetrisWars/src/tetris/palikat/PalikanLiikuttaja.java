@@ -2,6 +2,12 @@ package tetris.palikat;
 
 import tetris.pelikentta.Ruutu;
 
+/**
+ * Liikuttelee palikkaa, sekä tarjoaa metodit ruutujen siirtämiseen ja
+ * tarkistamiseen onko siirto mahdollinen.
+ * 
+ * @author albis
+ */
 public class PalikanLiikuttaja {
 
     /**

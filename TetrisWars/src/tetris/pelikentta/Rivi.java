@@ -3,6 +3,12 @@ package tetris.pelikentta;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Luokka, joka sisältää kentän yksittäisen rivin kaikki ruudut ja hallinnoi
+ * niitä.
+ * 
+ * @author albis
+ */
 public class Rivi {
     
     /**

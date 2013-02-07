@@ -1,7 +1,7 @@
 package tetris;
 
 import javax.swing.SwingUtilities;
-import tetris.kayttoliittyma.PeliKayttoliittyma;
+import tetris.peliKayttoliittyma.PeliKayttoliittyma;
 
 public class Main {
     
@@ -18,7 +18,7 @@ public class Main {
             }
         }
 
-        peli.setPiirtoalusta(kayttoliittyma.getPiirtoalusta());
+        peli.setPiirtoalusta(kayttoliittyma);
         peli.pelaaPeli();
     }    
 }

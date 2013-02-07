@@ -1,9 +1,14 @@
 package tetris;
 
-import tetris.kayttoliittyma.PeliPiirtoalusta;
+import tetris.peliKayttoliittyma.PeliKayttoliittyma;
 import tetris.pelikentta.Kentta;
 import tetris.pelikentta.Rivi;
 
+/**
+ * Pelin aloittamisesta ja komponenttien hallitsemisesta huolehtiva luokka.
+ * 
+ * @author albis
+ */
 public class Peli {
     
     /**
@@ -14,31 +19,39 @@ public class Peli {
     /**
      * Palikoiden graafisesta piirtämisestä huolehtiva olio.
      */
-    private PeliPiirtoalusta piirtoalusta;
+    private PeliKayttoliittyma kayttoLiittyma;
     
     /**
      * Käytetään määrittämään palikan tippumisen nopeus.
      */
     private int aikaLiikkeidenValissa;
+
     
-    /**
-     * Kuinka paljon pisteitä on tähän mennessä saatu kerättyä.
-     */
-    private int pisteet;
+    private Pistelaskenta pistelaskenta;
     
-    public Peli() {
+    private String kayttajanNimi;
+    
+    public Peli() throws Exception {
         kentta = new Kentta();
-        
-        aikaLiikkeidenValissa = 1500;
-        pisteet = 0;
+        aikaLiikkeidenValissa = 1000;
+        pistelaskenta = new Pistelaskenta();
+        kayttajanNimi = "";
     }
     
     public Kentta getKentta() {
         return kentta;
     }
     
-    public void setPiirtoalusta(PeliPiirtoalusta piirtoalusta) {
-        this.piirtoalusta = piirtoalusta;
+    public void setNimi(String nimi) {
+        kayttajanNimi = nimi;
+    }
+    
+    public Pistelaskenta getPistelaskenta() {
+        return pistelaskenta;
+    }
+    
+    public void setPiirtoalusta(PeliKayttoliittyma kayttoLiittyma) {
+        this.kayttoLiittyma = kayttoLiittyma;
     }
     
     public void pelaaPeli() throws Exception {
@@ -55,18 +68,23 @@ public class Peli {
                 kentta.uusiPalikka();
                 nopeuta();
                 
-                piirtoalusta.repaint();
+                kayttoLiittyma.getPiirtoalusta().repaint();
                 continue;
             }
             
             kentta.liikutaPalikkaaAlas();
             
-            piirtoalusta.repaint();
+            kayttoLiittyma.getPiirtoalusta().repaint();
+        }
+        
+        kayttoLiittyma.kysyNimi();
+        if (!kayttajanNimi.isEmpty()) {
+            pistelaskenta.kirjaaPisteetYlos(kayttajanNimi);
         }
     }
     
     public void nopeuta() {
-        if (aikaLiikkeidenValissa > 500) {
+        if (aikaLiikkeidenValissa > 300) {
             aikaLiikkeidenValissa -= 10;
         }
     }
@@ -82,9 +100,11 @@ public class Peli {
         for (int i = 0; i < kentta.getRivit().size(); i++) {
             if (kentta.getRivit().get(i).tarkistaTuhoutuukoRivi()) {
                 
-                pisteet += 10;
+                pistelaskenta.kasvataPisteita();
                 kentta.setTuhottavaRivi(i);
-                piirtoalusta.repaint();
+                kayttoLiittyma.getPistePaneeli().paivita();
+                kayttoLiittyma.getPiirtoalusta().repaint();
+                
                 Thread.sleep(500);
                 
                 kentta.tyhjennaRuudut(kentta.getRivit().get(i).getRuudut());

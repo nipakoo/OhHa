@@ -5,6 +5,11 @@ import java.util.List;
 import tetris.palikat.PalikanLiikuttaja;
 import tetris.palikat.Palikka;
 
+/**
+ * Luokka, joka sisältää kaikki pelissä olevat ruudut ja hallinnoi niitä.
+ * 
+ * @author albis
+ */
 public class Kentta {
     
     /**

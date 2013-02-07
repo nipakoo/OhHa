@@ -10,6 +10,10 @@ import tetris.palikat.palikanKaantaja.TKaantaja;
 import tetris.pelikentta.Kentta;
 import tetris.pelikentta.Ruutu;
 
+/**
+ * Kuvaa käyttäjän liikuteltavana ja käänneltävänä olevaa palikkaa.
+ * @author albis
+ */
 public  class Palikka {
     
     /**

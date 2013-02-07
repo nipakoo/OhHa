@@ -2,6 +2,12 @@ package tetris.palikat.palikanKaantaja;
 
 import tetris.palikat.Palikka;
 
+/**
+ * Eri tyyppisten kääntäjien yliluokka, ei ilmennetä muulloin kuin neliön
+ * muotoisten palikoiden yhteydessä, sillä se ei käänny.
+ * 
+ * @author albis
+ */
 public class PalikanKaantaja {
     protected Palikka palikka;
     

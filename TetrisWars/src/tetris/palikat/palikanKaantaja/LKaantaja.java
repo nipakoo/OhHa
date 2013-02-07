@@ -3,6 +3,11 @@ package tetris.palikat.palikanKaantaja;
 import sun.swing.plaf.synth.Paint9Painter;
 import tetris.palikat.Palikka;
 
+/**
+ * L-muotoisten palikoiden kääntymistä huolehtiva luokka.
+ * 
+ * @author albis
+ */
 public class LKaantaja extends PalikanKaantaja{
     
     public LKaantaja(Palikka palikka) {

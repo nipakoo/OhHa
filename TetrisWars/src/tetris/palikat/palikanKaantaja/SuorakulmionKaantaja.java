@@ -2,6 +2,11 @@ package tetris.palikat.palikanKaantaja;
 
 import tetris.palikat.Palikka;
 
+/**
+ * Suorakulmion muotoisten palikoiden kääntämisestä huolehtiva luokka.
+ * 
+ * @author albis
+ */
 public class SuorakulmionKaantaja extends PalikanKaantaja {
     
     public SuorakulmionKaantaja(Palikka palikka) {

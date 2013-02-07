@@ -1,5 +1,11 @@
 package tetris.pelikentta;
 
+/**
+ * Ilmentää pelin yksittäistä ruutua pitäen kirjaa sen sijainnista ja siitä,
+ * onko kyseinen sijainti tyhjä vai täysi.
+ * 
+ * @author albis
+ */
 public class Ruutu {
     
     /**

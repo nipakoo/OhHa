@@ -2,6 +2,11 @@ package tetris.palikat.palikanKaantaja;
 
 import tetris.palikat.Palikka;
 
+/**
+ * Mutka-muotoisten palikoiden kääntämisestä huolehtiva luokka.
+ * 
+ * @author albis
+ */
 public class MutkanKaantaja extends PalikanKaantaja {
     
     public MutkanKaantaja(Palikka palikka) {

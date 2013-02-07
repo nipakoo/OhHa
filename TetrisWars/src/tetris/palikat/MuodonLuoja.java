@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import tetris.pelikentta.Ruutu;
 
+/**
+ * Asettaa palikan ruudut haluttuihin kohtiin palikan tyypin mukaisen 
+ * asennon perusteella
+ * 
+ * @author albis
+ */
 public class MuodonLuoja {
     /**
      * Lista Ruutu-olioita, johon lisätään halutut Ruutu-oliot.

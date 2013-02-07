@@ -44,3 +44,9 @@ Testit onnistuivat hyvin ja molempien, sekä kääntämis- että liikkumistoimin
 Testattu palikoiden liikkumista ja kääntymistä graafisen käyttöliittymän ensimmäisellä versiolla. Palikat liikkuivat oikein, täydet rivit tuhoutuivat oikein ja ylemmät palikat tippuivat alas.
 
 -------------------------------------------------------------------
+
+7.2.2013
+
+Graafiseen käyttöliittymään lisätty pistelaskenta-ominaisuus ja sen toiminta testattu ja todettu.
+
+-------------------------------------------------------------------

@@ -2,6 +2,11 @@ package tetris.palikat.palikanKaantaja;
 
 import tetris.palikat.Palikka;
 
+/**
+ * T-muotoisten palikoiden kääntämisestä huolehtiva luokka.
+ * 
+ * @author albis
+ */
 public class TKaantaja extends PalikanKaantaja {
     
     public TKaantaja(Palikka palikka) {

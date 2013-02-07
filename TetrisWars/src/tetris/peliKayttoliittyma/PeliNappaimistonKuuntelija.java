@@ -1,16 +1,22 @@
-package tetris.kayttoliittyma;
+package tetris.peliKayttoliittyma;
 
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import tetris.pelikentta.Kentta;
+import tetris.Peli;
 
+/**
+ * Palikan liikkumiseen käytettävien näppäinkomentojen vastaanottamisesta huolehtiva
+ * luokka.
+ * 
+ * @author albis
+ */
 public class PeliNappaimistonKuuntelija implements KeyListener {
-    private Kentta kentta;
+    private Peli peli;
     private Component component;
     
-    public PeliNappaimistonKuuntelija(Kentta kentta, Component component) {
-        this.kentta = kentta;
+    public PeliNappaimistonKuuntelija(Peli peli, Component component) {
+        this.peli = peli;
         this.component = component;
     }
 
@@ -21,13 +27,13 @@ public class PeliNappaimistonKuuntelija implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_W) {
-            kentta.kaannaPalikkaa();
+            peli.getKentta().kaannaPalikkaa();
         } else if (e.getKeyCode() == KeyEvent.VK_D) {
-            kentta.liikutaPalikkaaOikealle();
+            peli.getKentta().liikutaPalikkaaOikealle();
         } else if (e.getKeyCode() == KeyEvent.VK_A) {
-            kentta.liikutaPalikkaaVasemmalle();
+            peli.getKentta().liikutaPalikkaaVasemmalle();
         } else if (e.getKeyCode() == KeyEvent.VK_S) {
-            kentta.pudotaPalikka();
+            peli.getKentta().pudotaPalikka();
         }
         
         component.repaint();
