@@ -12,6 +12,10 @@ import tetris.Peli;
  * @author albis
  */
 public class PeliNappaimistonKuuntelija implements KeyListener {
+    
+    /**
+     * Peli-olio, joka suorittaa toiminnot kun määritettyjä näppäimiä painetaan.
+     */
     private Peli peli;
     private Component component;
     
