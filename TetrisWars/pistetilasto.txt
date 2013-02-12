@@ -1,7 +1,11 @@
 
 
 
+
+
 0 niko
+105 niko
 120 niko
 225 niko
 2595 niko
+30 paskamon

@@ -31,7 +31,7 @@ public class Peli {
     
     private String kayttajanNimi;
     
-    public Peli() throws Exception {
+    public Peli() {
         kentta = new Kentta();
         aikaLiikkeidenValissa = 1000;
         pistelaskenta = new Pistelaskenta();
@@ -54,9 +54,13 @@ public class Peli {
         this.kayttoLiittyma = kayttoLiittyma;
     }
     
-    public void pelaaPeli() throws Exception {
+    public void pelaaPeli() {
         while (true) {
-            Thread.sleep(aikaLiikkeidenValissa);
+            try {
+                Thread.sleep(aikaLiikkeidenValissa);
+            } catch (InterruptedException e) {
+                System.out.println("Virhe palikan liikkuessa alas!");
+            }
 
             if (kentta.pysahtyykoPalikka()) {
                 tuhoaTaydetRivit();
@@ -96,7 +100,7 @@ public class Peli {
      * 
      * @throws Exception 
      */
-    public void tuhoaTaydetRivit() throws Exception {
+    public void tuhoaTaydetRivit() {
         for (int i = 0; i < kentta.getRivit().size(); i++) {
             if (kentta.getRivit().get(i).tarkistaTuhoutuukoRivi()) {
                 
@@ -105,7 +109,11 @@ public class Peli {
                 kayttoLiittyma.getPistePaneeli().paivita();
                 kayttoLiittyma.getPiirtoalusta().repaint();
                 
-                Thread.sleep(500);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    System.out.println("Virhe rivin tuhoutumisanimaatiota esittäessä!");
+                }
                 
                 kentta.tyhjennaRuudut(kentta.getRivit().get(i).getRuudut());
                 

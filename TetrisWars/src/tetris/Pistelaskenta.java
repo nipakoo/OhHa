@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class Pistelaskenta {
     private int pisteet;
     
-    public Pistelaskenta() throws IOException {
+    public Pistelaskenta() {
         pisteet = 0;
     }
     
@@ -29,28 +29,55 @@ public class Pistelaskenta {
         pisteet += 15;
     }
     
-    public void kirjaaPisteetYlos(String nimi) throws IOException {
+    public void kirjaaPisteetYlos(String nimi) {
         List<String> uusiPistetilasto = luePistetilasto();
         
-        FileWriter tallentaja = new FileWriter("pistetilasto.txt");
+        FileWriter tallentaja = null;
+        try {
+            tallentaja = new FileWriter("pistetilasto.txt");
+        } catch (IOException e) {
+            System.out.println("Virhe FileWriteria luotaessa!");
+        }
+        
+        if (tallentaja == null) {
+            return;
+        }
 
         uusiPistetilasto.add(pisteet + " " + nimi);
         
         Collections.sort(uusiPistetilasto);
         
         for (int i = 0; i < uusiPistetilasto.size(); i++) {
-            tallentaja.append("\n" + uusiPistetilasto.get(i));
+            try {
+                tallentaja.append("\n" + uusiPistetilasto.get(i));
+            } catch (IOException e) {
+                System.out.println("Virhe pistetilastoa kirjoitettaessa!");
+            }
         }
         
-        tallentaja.close();
+        try {
+            tallentaja.close();
+        } catch (IOException e) {
+            System.out.println("Virhe FileWriteria sulkiessa!");
+        }
     }
     
-    public List<String> luePistetilasto() throws FileNotFoundException {
+    public List<String> luePistetilasto() {
         List<String> pistelista = new ArrayList<String>();
         
+        Scanner lukija = null;
         File pistetilasto = new File("pistetilasto.txt");
-        Scanner lukija = new Scanner(pistetilasto);
         
+        try {
+            lukija = new Scanner(pistetilasto);
+        } catch (FileNotFoundException e) {
+            System.out.println("Virhe tiedostoa luettaessa! Tiedostoa ei löytynyt.");
+        }
+        
+        if (lukija == null) {
+            return pistelista;
+        }
+            
         while (lukija.hasNextLine()) {
             pistelista.add(lukija.nextLine());
         }
@@ -60,7 +87,7 @@ public class Pistelaskenta {
         return pistelista;
     }
     
-    public String getTahanAstiParas() throws FileNotFoundException {
+    public String getTahanAstiParas() {
         List<String> pistetilasto = luePistetilasto();
         
         if (pistetilasto.isEmpty()) {

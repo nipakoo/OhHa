@@ -3,7 +3,6 @@ package tetris.peliKayttoliittyma;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.io.FileNotFoundException;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -27,7 +26,7 @@ public class PistePaneeli extends JPanel  {
     private Peli peli;
     private JLabel pisteet;
     
-    public PistePaneeli(int korkeus, Peli peli, int vasenVaiOikeaPaneeli) throws FileNotFoundException {
+    public PistePaneeli(int korkeus, Peli peli, int vasenVaiOikeaPaneeli) {
         super.setBackground(Color.black);
         super.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         

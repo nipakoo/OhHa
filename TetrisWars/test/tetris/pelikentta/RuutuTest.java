@@ -1,9 +1,8 @@
-package tetris;
+package tetris.pelikentta;
 
-import tetris.pelikentta.Ruutu;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class RuutuTest {
     Ruutu ruutu;

@@ -1,7 +1,5 @@
 package tetris.palikat;
 
-import tetris.palikat.MuodonLuoja;
-import tetris.palikat.Palikka;
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.*;

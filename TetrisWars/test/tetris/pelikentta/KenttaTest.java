@@ -1,4 +1,4 @@
-package tetris;
+package tetris.pelikentta;
 
 import tetris.pelikentta.Kentta;
 import static org.junit.Assert.*;
@@ -99,5 +99,12 @@ public class KenttaTest {
         kentta.getPalikka().kaanna();
         
         assertEquals(kentta.getPalikka().getAsento(), 2);
+    }
+    
+    @Test
+    public void pysahtyminenTodetaanOikein() {
+        kentta.pudotaPalikka();
+        
+        assertTrue(kentta.pysahtyykoPalikka());
     }
 }

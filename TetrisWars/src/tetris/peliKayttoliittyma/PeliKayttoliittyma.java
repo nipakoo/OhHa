@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
-import java.io.FileNotFoundException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -56,10 +55,8 @@ public class PeliKayttoliittyma implements Runnable {
         frame.setBackground(Color.black);
         frame.setUndecorated(true);
         
-        try {
-            luoKomponentit();
-        } catch (FileNotFoundException ex) {
-        }
+        luoKomponentit();
+
         
         frame.pack();
         frame.setVisible(true);
@@ -70,7 +67,7 @@ public class PeliKayttoliittyma implements Runnable {
      * 
      * @throws FileNotFoundException 
      */
-    private void luoKomponentit() throws FileNotFoundException {
+    private void luoKomponentit() {
         frame.setLayout(new GridLayout(1, 3));
         piirtoalusta = new PeliPiirtoalusta(peli.getKentta(), korkeus / 20);
         
