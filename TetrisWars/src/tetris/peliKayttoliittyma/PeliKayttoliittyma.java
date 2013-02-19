@@ -67,7 +67,7 @@ public class PeliKayttoliittyma implements Runnable {
      * 
      * @throws FileNotFoundException 
      */
-    private void luoKomponentit() {
+    public void luoKomponentit() {
         frame.setLayout(new GridLayout(1, 3));
         piirtoalusta = new PeliPiirtoalusta(peli.getKentta(), korkeus / 20);
         
@@ -105,8 +105,12 @@ public class PeliKayttoliittyma implements Runnable {
     public void kysyNimi() {
         frame.removeKeyListener(frame.getKeyListeners()[0]);
         
-        peli.setNimi((String)JOptionPane.showInputDialog(frame, "Tuloksesi" +
+        String nimi = (String)JOptionPane.showInputDialog(frame, "Tuloksesi" +
                 " " + peli.getPistelaskenta().getPisteet(),
-                "Anna nimesi!", JOptionPane.PLAIN_MESSAGE));
+                "Anna nimesi!", JOptionPane.PLAIN_MESSAGE);
+        
+        if (nimi != null) {
+            peli.setNimi(nimi);
+        }
     }
 }

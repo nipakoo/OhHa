@@ -8,9 +8,11 @@ import tetris.palikat.Palikka;
  * @author albis
  */
 public class MutkanKaantaja extends PalikanKaantaja {
+    private int kumminPain;
     
-    public MutkanKaantaja(Palikka palikka) {
+    public MutkanKaantaja(Palikka palikka, int kumminPain) {
         super(palikka);
+        this.kumminPain = kumminPain;
     }
     
     /**
@@ -47,9 +49,9 @@ public class MutkanKaantaja extends PalikanKaantaja {
             return true;
         }
         
-        siirraRuutua(0, mistaAsennosta * 2, mistaAsennosta * -1);
+        siirraRuutua(0, mistaAsennosta * 2, mistaAsennosta * -1 * kumminPain);
         siirraRuutua(1, mistaAsennosta * 1, mistaAsennosta * 0);
-        siirraRuutua(2, mistaAsennosta * 0, mistaAsennosta * -1);
+        siirraRuutua(2, mistaAsennosta * 0, mistaAsennosta * -1 * kumminPain);
         siirraRuutua(3, mistaAsennosta * -1, mistaAsennosta * 0);
         
         return false;
@@ -64,11 +66,11 @@ public class MutkanKaantaja extends PalikanKaantaja {
      * @return Jos palikan tiellä on täysiä ruutuja tai seinä palautetaan true, muuten false
      */
     public boolean tarkistaOsuisikoSeinaanTaiPalikkaan(int mistaAsennosta) {
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, mistaAsennosta * 2, mistaAsennosta * -1)) {
+        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, mistaAsennosta * 2, mistaAsennosta * -1 * kumminPain)) {
             return true;
         } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(1, mistaAsennosta * 1, mistaAsennosta * 0)) {
             return true;
-        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, mistaAsennosta * 0, mistaAsennosta * -1)) {
+        } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, mistaAsennosta * 0, mistaAsennosta * -1 * kumminPain)) {
             return true;
         } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, mistaAsennosta * -1, mistaAsennosta * 0)) {
             return true;

@@ -21,7 +21,7 @@ public class Kentta {
      * Liikuteltavaa palikkaa kuvaava Palikka-olio.
      */
     private Palikka palikka;
-    
+
     /**
      * Rivit-listasta tuhottavan Rivi-olion indeksi, oletuksena arvona on -1, Peli-olio
      * muuttaa arvon, jos rivi on täynnä ja se on tuhottava.
@@ -36,6 +36,7 @@ public class Kentta {
         }
         
         palikka = new Palikka(this);
+        
         tuhottavaRivi = -1;
     }
     

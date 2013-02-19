@@ -83,6 +83,15 @@ public class MuodonLuoja {
         return ruudut;
     }
     
+    public List<Ruutu> luoMutkaEriPain(int alkuX) {
+        ruudut.add(palikka.getRuutu(alkuX, alkuY + 1));
+        ruudut.add(palikka.getRuutu(alkuX + 1, alkuY + 1));
+        ruudut.add(palikka.getRuutu(alkuX + 1, alkuY));
+        ruudut.add(palikka.getRuutu(alkuX + 2, alkuY));
+        
+        return ruudut;
+    }
+    
     /**
      * Asettaa palikan ruudut niin, että muodostuu L.
      * 
@@ -91,12 +100,22 @@ public class MuodonLuoja {
      * 
      * @return Muodostettu lista ruutuja
      */
-    public List<Ruutu> luoL(int alkuX) {
+    public List<Ruutu> luoMahallaanOlevaL(int alkuX) {
         for (int i = 0; i < 3; i++) {
             ruudut.add(palikka.getRuutu(alkuX + i, alkuY));
         }
         
         ruudut.add(palikka.getRuutu(alkuX + 2, alkuY + 1));
+        
+        return ruudut;
+    }
+    
+    public List<Ruutu> luoSelallaanOlevaL(int alkuX) {
+        for (int i = 0; i < 3; i++) {
+            ruudut.add(palikka.getRuutu(alkuX + i, alkuY + 1));
+        }
+        
+        ruudut.add(palikka.getRuutu(alkuX + 2, alkuY));
         
         return ruudut;
     }

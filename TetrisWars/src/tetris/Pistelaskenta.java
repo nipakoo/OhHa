@@ -29,8 +29,13 @@ public class Pistelaskenta {
         pisteet += 15;
     }
     
+    /**
+     * Kirjaa pistelistaan uuden tuloksen.
+     * 
+     * @param nimi pelaajan syöttämä nimi, jolla pisteet tallennetaan. 
+     */
     public void kirjaaPisteetYlos(String nimi) {
-        List<String> uusiPistetilasto = luePistetilasto();
+        List<PisteTieto> uusiPistetilasto = luePistetilasto();
         
         FileWriter tallentaja = null;
         try {
@@ -43,7 +48,7 @@ public class Pistelaskenta {
             return;
         }
 
-        uusiPistetilasto.add(pisteet + " " + nimi);
+        uusiPistetilasto.add(new PisteTieto(pisteet, nimi));
         
         Collections.sort(uusiPistetilasto);
         
@@ -62,8 +67,13 @@ public class Pistelaskenta {
         }
     }
     
-    public List<String> luePistetilasto() {
-        List<String> pistelista = new ArrayList<String>();
+    /**
+     * Lukee olemassaolevat pistetiedot.
+     * 
+     * @return Palauttaa listan pistetiedoista.
+     */
+    public List<PisteTieto> luePistetilasto() {
+        List<PisteTieto> pistelista = new ArrayList<PisteTieto>();
         
         Scanner lukija = null;
         File pistetilasto = new File("pistetilasto.txt");
@@ -79,7 +89,11 @@ public class Pistelaskenta {
         }
             
         while (lukija.hasNextLine()) {
-            pistelista.add(lukija.nextLine());
+            String lisattava = lukija.nextLine();
+            String[] lisattavat = lisattava.split(" ");
+            if (!lisattava.isEmpty()) {
+                pistelista.add(new PisteTieto(Integer.parseInt(lisattavat[0]), lisattavat[1]));
+            }
         }
         
         lukija.close();
@@ -87,13 +101,18 @@ public class Pistelaskenta {
         return pistelista;
     }
     
+    /**
+     * Haetaan suurimmat pisteet omaava tulos.
+     * 
+     * @return Palauttaa parhaan pistetiedon merkkijonoesityksen
+     */
     public String getTahanAstiParas() {
-        List<String> pistetilasto = luePistetilasto();
+        List<PisteTieto> pistetilasto = luePistetilasto();
         
         if (pistetilasto.isEmpty()) {
             return "Ei vielä tuloksia";
         }
         
-        return pistetilasto.get(pistetilasto.size() - 1);
+        return pistetilasto.get(pistetilasto.size() - 1).toString();
     }
 }

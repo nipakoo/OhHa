@@ -62,13 +62,33 @@ public class MuodonLuojaTest {
     }
     
     @Test
-    public void LMuodostuuOikein() {
+    public void mutkaToisinPainMuodostuuOikein() {
+        ruudut.add(new Ruutu(6, 1));
+        ruudut.add(new Ruutu(7, 1));
+        ruudut.add(new Ruutu(7, 0));
+        ruudut.add(new Ruutu(8, 0));
+        
+        assertTrue(ruudut.equals(muodonLuoja.luoMutkaEriPain(6)));
+    }
+    
+    @Test
+    public void LMahallaanMuodostuuOikein() {
         ruudut.add(new Ruutu(7, 0));
         ruudut.add(new Ruutu(8, 0));
         ruudut.add(new Ruutu(9, 0));
         ruudut.add(new Ruutu(9, 1));
         
-        assertTrue(ruudut.equals(muodonLuoja.luoL(7)));
+        assertTrue(ruudut.equals(muodonLuoja.luoMahallaanOlevaL(7)));
+    }
+    
+    @Test
+    public void LSelallaanMuodostuuOikein() {
+        ruudut.add(new Ruutu(3, 1));
+        ruudut.add(new Ruutu(4, 1));
+        ruudut.add(new Ruutu(5, 1));
+        ruudut.add(new Ruutu(5, 0));
+        
+        assertTrue(ruudut.equals(muodonLuoja.luoSelallaanOlevaL(3)));
     }
     
     @Test

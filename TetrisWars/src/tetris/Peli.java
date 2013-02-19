@@ -26,7 +26,9 @@ public class Peli {
      */
     private int aikaLiikkeidenValissa;
 
-    
+    /**
+     * Pisteiden ylös ottamisesta ja laskemisesta huolehtiva olio.
+     */
     private Pistelaskenta pistelaskenta;
     
     private String kayttajanNimi;
@@ -54,6 +56,9 @@ public class Peli {
         this.kayttoLiittyma = kayttoLiittyma;
     }
     
+    /**
+     * Metodi, joka aloittaa tetrispelin ja käyttää sitä, kunnes palikka pysähtyy ylimmälle riville.
+     */
     public void pelaaPeli() {
         while (true) {
             try {
@@ -65,7 +70,8 @@ public class Peli {
             if (kentta.pysahtyykoPalikka()) {
                 tuhoaTaydetRivit();
                 
-                if (kentta.getPalikka().getRuudut().get(0).getY() == 0) {
+                if (kentta.getPalikka().getRuudut().get(0).getY() == 0 ||
+                        kentta.getPalikka().getRuudut().get(3).getY() == 0) {
                     break;
                 }
        
@@ -77,7 +83,6 @@ public class Peli {
             }
             
             kentta.liikutaPalikkaaAlas();
-            
             kayttoLiittyma.getPiirtoalusta().repaint();
         }
         
@@ -87,7 +92,7 @@ public class Peli {
         }
     }
     
-    public void nopeuta() {
+    private void nopeuta() {
         if (aikaLiikkeidenValissa > 300) {
             aikaLiikkeidenValissa -= 10;
         }
@@ -100,34 +105,52 @@ public class Peli {
      * 
      * @throws Exception 
      */
-    public void tuhoaTaydetRivit() {
+    private void tuhoaTaydetRivit() {
         for (int i = 0; i < kentta.getRivit().size(); i++) {
             if (kentta.getRivit().get(i).tarkistaTuhoutuukoRivi()) {
                 
                 pistelaskenta.kasvataPisteita();
-                kentta.setTuhottavaRivi(i);
-                kayttoLiittyma.getPistePaneeli().paivita();
-                kayttoLiittyma.getPiirtoalusta().repaint();
+                suoritaTuhoamisAnimaatio(i);
                 
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    System.out.println("Virhe rivin tuhoutumisanimaatiota esittäessä!");
-                }
-                
-                kentta.tyhjennaRuudut(kentta.getRivit().get(i).getRuudut());
-                
-                for (int j = i; j >= 0; j--) {
-                    if (j == 0) {
-                        kentta.setRivi(new Rivi(j), 0);
-                    } else {
-                        kentta.setRivi(kentta.getRivit().get(j - 1), j);
-                        kentta.getRivit().get(j).laskeRiviaYksiAlas();
-                    }
-                }
+                laskeYlemmatRivit(i);
             }
         }
         
         kentta.setTuhottavaRivi(-1); 
+    }
+    
+    /**
+     * Suorittaa rivin tuhoamisanimaation.
+     * 
+     * @param rivinSijainti kertoo mihin kohtaan kenttää tuhoamisanimaatio suoritetaan.
+     */
+    private void suoritaTuhoamisAnimaatio(int rivinSijainti) {
+        kentta.setTuhottavaRivi(rivinSijainti);
+        kayttoLiittyma.getPistePaneeli().paivita();
+        kayttoLiittyma.getPiirtoalusta().repaint();
+                
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            System.out.println("Virhe rivin tuhoutumisanimaatiota esittäessä!");
+        }
+    }
+    
+    /**
+     * Laskee tuhoutuneen rivin ylempiä rivejä yhden alas.
+     * 
+     * @param rivinSijainti kertoo mistä korkeudesta ylemmät rivit on laskettava.
+     */
+    private void laskeYlemmatRivit(int rivinSijainti) {
+        kentta.tyhjennaRuudut(kentta.getRivit().get(rivinSijainti).getRuudut());
+                
+        for (int j = rivinSijainti; j >= 0; j--) {
+            if (j == 0) {
+                kentta.setRivi(new Rivi(j), 0);
+            } else {
+                kentta.setRivi(kentta.getRivit().get(j - 1), j);
+                kentta.getRivit().get(j).laskeRiviaYksiAlas();
+            }
+        }
     }
 }

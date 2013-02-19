@@ -61,7 +61,7 @@ public  class Palikka {
         this.kentta = kentta;
         muodonLuoja = new MuodonLuoja(this);
         
-        palikanTyyppi = arpoja.nextInt(5);
+        palikanTyyppi = arpoja.nextInt(7);
         palikanAsento = 0;
         
         if (palikanTyyppi == 0) {
@@ -72,10 +72,16 @@ public  class Palikka {
             palikanKaantaja = new SuorakulmionKaantaja(this);
         } else if (palikanTyyppi == 2) {
             ruudut = muodonLuoja.luoMutka(arpoja.nextInt(8));
-            palikanKaantaja = new MutkanKaantaja(this);
+            palikanKaantaja = new MutkanKaantaja(this, 1);
         } else if (palikanTyyppi == 3) {
-            ruudut = muodonLuoja.luoL(arpoja.nextInt(8));
-            palikanKaantaja = new LKaantaja(this);
+            ruudut = muodonLuoja.luoMutkaEriPain(arpoja.nextInt(8));
+            palikanKaantaja = new MutkanKaantaja(this, -1);
+        } else if (palikanTyyppi == 4) {
+            ruudut = muodonLuoja.luoMahallaanOlevaL(arpoja.nextInt(8));
+            palikanKaantaja = new LKaantaja(this, true);
+        } else if (palikanTyyppi == 5) {
+            ruudut = muodonLuoja.luoSelallaanOlevaL(arpoja.nextInt(8));
+            palikanKaantaja = new LKaantaja(this, false);
         } else {
             ruudut = muodonLuoja.luoT(arpoja.nextInt(8));
             palikanKaantaja = new TKaantaja(this);
