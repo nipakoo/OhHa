@@ -1,0 +1,5 @@
+Peli-alue on Kentta-olio, joka koostuu Rivi- ja Ruutu- olioista. Kentällä on myös Palikka-olio, joka hakee itselleen oikeassa suhteessa toisiinsa olevat ruudut luoden itselleen muodon MuodonLuoja-oliolla. Palikan kääntämiseen käytetään PalikanKaantaja-luokkaa, joka ilmennetään sen oikeanlaisella aliluokalla palikan muodosta riippuen. Palikan liikutteleminen taas tapahtuu PalikanLiikuttaja-luokalla.
+
+Peli-luokka hallinnoi käynnissä olevaa peliä tiputtaen palikkaa ja pitäen huolta pisteistä Pistelaskenta-luokan avulla.
+
+Kayttoliittyma-luokka luo pelille grafiikan, sekä huolehtii näppäinten painallusten vastaanottamisesta ja pause-valikon hallinnoinnista.

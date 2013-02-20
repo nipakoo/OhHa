@@ -53,4 +53,4 @@ Graafiseen käyttöliittymään lisätty pistelaskenta-ominaisuus ja sen toimint
 
 20.2.2013
 
-PalikanKaantajan testaus erittäin hankala toteuttaa monien mahdollisuuksien ja satunnaisuuden takia, joten testattu manuaalisesti (pelaamalla peliä, ja paljon). Testattu myös lisättyjä pause- sekä pistetilasto ominaisuuksia ja toiminta todettu hyväksi.
+PalikanKaantajan testaus erittäin hankala toteuttaa monien mahdollisuuksien ja satunnaisuuden takia, joten testattu manuaalisesti (pelaamalla peliä). Testattu myös lisättyjä pause- sekä pistetilasto ominaisuuksia ja toiminta todettu hyväksi.

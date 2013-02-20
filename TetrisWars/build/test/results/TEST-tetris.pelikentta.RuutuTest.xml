@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="albis-AO756" name="tetris.pelikentta.RuutuTest" tests="6" time="0.115" timestamp="2013-02-20T10:12:38">
+<testsuite errors="0" failures="0" hostname="albis-AO756" name="tetris.pelikentta.RuutuTest" tests="6" time="0.147" timestamp="2013-02-20T11:59:56">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="nb.wait.for.caches" value="true" />
@@ -42,7 +42,7 @@
     <property name="copylibs.rebase" value="true" />
     <property name="manifest.available+main.class" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tetris.pelikentta.RuutuTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/albis/OhHa/TetrisWars/build/test/results/TEST-tetris.pelikentta.RuutuTest.xml crashfile=/home/albis/OhHa/TetrisWars/build/junitvmwatcher3933933236684545058.properties propsfile=/home/albis/OhHa/TetrisWars/build/junit2050281518792145047.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tetris.pelikentta.RuutuTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/albis/OhHa/TetrisWars/build/test/results/TEST-tetris.pelikentta.RuutuTest.xml crashfile=/home/albis/OhHa/TetrisWars/build/junitvmwatcher7503494308031359054.properties propsfile=/home/albis/OhHa/TetrisWars/build/junit5226187037893170537.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="jnlp.descriptor" value="application" />
@@ -162,7 +162,6 @@
     <property name="org.openide.major.version" value="IDE/1" />
     <property name="java.vm.name" value="Java HotSpot(TM) Server VM" />
     <property name="netbeans.user" value="/home/albis/.netbeans/7.2" />
-    <property name="tests.failed" value="true" />
     <property name="javadoc.additionalparam" value="" />
     <property name="jnlp.offline-allowed" value="false" />
     <property name="java.io.tmpdir" value="/tmp" />
@@ -180,7 +179,6 @@
     <property name="meta.inf.dir" value="src/META-INF" />
     <property name="javadoc.encoding.used" value="UTF-8" />
     <property name="dist.jar" value="dist/TetrisWars.jar" />
-    <property name="netbeans.automatic.build" value="true" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.project.name" value="TetrisWars" />
     <property name="netbeans.hash.code" value="unique=NBJDK_JAVA_JDK05a8fdbbd-d984-45cd-a527-4e0decdeecd0_1f56e24e-e0c6-4570-9168-f9bb014b01f7" />
@@ -303,12 +301,12 @@
     <property name="javadoc.nonavbar" value="false" />
     <property name="platform.active" value="default_platform" />
   </properties>
-  <testcase classname="tetris.pelikentta.RuutuTest" name="konstruktoriAsettaaXOikein" time="0.0030" />
+  <testcase classname="tetris.pelikentta.RuutuTest" name="konstruktoriAsettaaXOikein" time="0.0020" />
   <testcase classname="tetris.pelikentta.RuutuTest" name="konstruktoriAsettaaYOikein" time="0.0" />
   <testcase classname="tetris.pelikentta.RuutuTest" name="luotuRuutuOnTyhja" time="0.0010" />
   <testcase classname="tetris.pelikentta.RuutuTest" name="tayttaminenOnnistuu" time="0.0" />
   <testcase classname="tetris.pelikentta.RuutuTest" name="tyhjentaminenOnnistuu" time="0.0010" />
-  <testcase classname="tetris.pelikentta.RuutuTest" name="equalsMetodiAntaaFalseOikein" time="0.0" />
+  <testcase classname="tetris.pelikentta.RuutuTest" name="equalsMetodiAntaaFalseOikein" time="0.0010" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
