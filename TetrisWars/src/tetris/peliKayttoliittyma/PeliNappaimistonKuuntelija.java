@@ -1,9 +1,7 @@
 package tetris.peliKayttoliittyma;
 
-import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import javax.swing.JFrame;
 import tetris.Peli;
 
 /**

@@ -45,7 +45,7 @@ public class PeliPiirtoalusta extends JPanel {
      * @param ruutu käsiteltävänä oleva ruutu
      * @param grafiikka 
      */
-    public void piirraRuutuJosTaysi(Ruutu ruutu, Graphics grafiikka) {
+    private void piirraRuutuJosTaysi(Ruutu ruutu, Graphics grafiikka) {
         if (!ruutu.onkoTyhja()) {
             grafiikka.setColor(Color.green);
             grafiikka.fill3DRect(sivunPituus * ruutu.getX(), sivunPituus * ruutu.getY(),
@@ -59,7 +59,7 @@ public class PeliPiirtoalusta extends JPanel {
      * @param ruutu käsiteltävänä oleva ruutu
      * @param grafiikka 
      */
-    public void piirraPalikka(Ruutu ruutu, Graphics grafiikka) {
+    private void piirraPalikka(Ruutu ruutu, Graphics grafiikka) {
         if (kentta.getPalikka().getRuudut().contains(ruutu) && kentta.getTuhottavaRivi() < 0) {
             grafiikka.setColor(Color.blue);
             grafiikka.fill3DRect(sivunPituus * ruutu.getX(), sivunPituus * ruutu.getY(),
@@ -72,7 +72,7 @@ public class PeliPiirtoalusta extends JPanel {
      * 
      * @param grafiikka 
      */
-    public void piirraTuhoamisAnimaatiot(Graphics grafiikka) {
+    private void piirraTuhoamisAnimaatiot(Graphics grafiikka) {
         if (kentta.getTuhottavaRivi() > -1) {
             grafiikka.setColor(Color.yellow);
             grafiikka.fill3DRect(0, kentta.getTuhottavaRivi() * sivunPituus,

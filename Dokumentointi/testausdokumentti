@@ -50,3 +50,7 @@ Testattu palikoiden liikkumista ja kääntymistä graafisen käyttöliittymän e
 Graafiseen käyttöliittymään lisätty pistelaskenta-ominaisuus ja sen toiminta testattu ja todettu.
 
 -------------------------------------------------------------------
+
+20.2.2013
+
+PalikanKaantajan testaus erittäin hankala toteuttaa monien mahdollisuuksien ja satunnaisuuden takia, joten testattu manuaalisesti (pelaamalla peliä). Testattu myös lisättyjä pause- sekä pistetilasto ominaisuuksia ja toiminta todettu hyväksi.

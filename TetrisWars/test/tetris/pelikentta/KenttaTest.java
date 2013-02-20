@@ -1,6 +1,5 @@
 package tetris.pelikentta;
 
-import tetris.pelikentta.Kentta;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -39,7 +38,7 @@ public class KenttaTest {
     @Test
     public void liikkuukoOikealle() {
         int haluttuX = 9;
-        if (kentta.getPalikka().getTyyppi() == 4) {
+        if (kentta.getPalikka().getTyyppi() == 6) {
             haluttuX = 8;
         }
         

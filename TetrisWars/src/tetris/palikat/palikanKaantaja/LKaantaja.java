@@ -8,6 +8,10 @@ import tetris.palikat.Palikka;
 * @author albis
 */
 public class LKaantaja extends PalikanKaantaja{
+    
+    /**
+     * Kertoo kummin päin palikka on, jos true on alussa sakara alas päin.
+     */
     private boolean mahallaan;
     
     public LKaantaja(Palikka palikka, boolean mahallaan) {
@@ -45,7 +49,7 @@ public class LKaantaja extends PalikanKaantaja{
 * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
 * jos käännös onnistuu
 */
-    public boolean kaannaAsennon0L() {
+    private boolean kaannaAsennon0L() {
         if (tarkistaOsuisikoAsennon0LSeinaanTaiPalikkaan()) {
             return true;
         }
@@ -58,6 +62,9 @@ public class LKaantaja extends PalikanKaantaja{
         return false;
     }
     
+    /**
+     * Siirtaa ruutuja 0 asennon mahallaan olevan L-palikan edellyttämällä tavalla.
+     */
     private void kaannaMahallaanOleva0AsennonL() {
         siirraRuutua(0, 2, -1);
         siirraRuutua(1, 1, 0);
@@ -65,6 +72,9 @@ public class LKaantaja extends PalikanKaantaja{
         siirraRuutua(3, -1, 0);
     }
     
+    /**
+     * SIirtää ruutuja 0 asennon selallaan olevan L-palikan edellyttämällä tavalla.
+     */
     private void kaannaSelallaanOleva0AsennonL() {
         siirraRuutua(0, 1, -2);
         siirraRuutua(1, 0, -1);
@@ -79,7 +89,7 @@ public class LKaantaja extends PalikanKaantaja{
 * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
 * jos käännös onnistuu
 */
-    public boolean kaannaAsennon1L() {
+    private boolean kaannaAsennon1L() {
         if (tarkistaOsuisikoAsennon1LSeinaanTaiPalikkaan()) {
             return true;
         }
@@ -93,6 +103,9 @@ public class LKaantaja extends PalikanKaantaja{
         return false;
     }
     
+    /**
+     * Siirtää ruutuja 1-asennossa mahallaan olevan L-palikan käännöksen edellyttämällä tavalla.
+     */
     private void kaannaMahallaanOlevaAsennon1L() {
         siirraRuutua(0, 0, 2);
         siirraRuutua(1, -1, 1);
@@ -100,6 +113,9 @@ public class LKaantaja extends PalikanKaantaja{
         siirraRuutua(3, -1, -1);
     }
     
+    /**
+     * Siirtää ruutuja selällään olevan 1-asennossa olevan L-palikan käännöksen edellyttämällä tavalla.
+     */
     private void kaannaSelallaanOlevaAsennon1L() {
         siirraRuutua(0, 1, 1);
         siirraRuutua(2, -1, -1);
@@ -113,7 +129,7 @@ public class LKaantaja extends PalikanKaantaja{
 * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
 * jos käännös onnistuu
 */
-    public boolean kaannaAsennon2L() {
+    private boolean kaannaAsennon2L() {
         if (tarkistaOsuisikoAsennon2LSeinaanTaiPalikkaan()) {
             return true;
         }
@@ -127,6 +143,9 @@ public class LKaantaja extends PalikanKaantaja{
         return false;
     }
     
+    /**
+     * Siirtaa ruutuja mahallaan olevan 2-asennon palikan käännöksen edellyttämällä tavalla.
+     */
     private void kaannaMahallaanOleva2AsennonL() {
         siirraRuutua(0, -1, 0);
         siirraRuutua(1, 0, -1);
@@ -134,6 +153,9 @@ public class LKaantaja extends PalikanKaantaja{
         siirraRuutua(3, 2, -1);
     }
     
+    /**
+     * Siirtää ruutuja selallaan olevan 2-asennon palikan käännöksen edellyttällä tavalla.
+     */
     private void kaannaSelallaanOleva2AsennonL() {
         siirraRuutua(0, -1, 1);
         siirraRuutua(2, 1, -1);
@@ -147,7 +169,7 @@ public class LKaantaja extends PalikanKaantaja{
 * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
 * jos käännös onnistuu
 */
-    public boolean kaannaAsennon3L() {
+    private boolean kaannaAsennon3L() {
         if (tarkistaOsuisikoAsennon3LSeinaanTaiPalikkaan()) {
             return true;
         }
@@ -161,12 +183,18 @@ public class LKaantaja extends PalikanKaantaja{
         return false;
     }
     
+    /**
+     * Siirtää ruutuja mahallaan olevan 3-asennon palikan käännöksen edellyttämällä tavalla.
+     */
     private void kaannaMahallaanOlevaAsennon3L() {
         siirraRuutua(0, -1, -1);
         siirraRuutua(2, 1, 1);
         siirraRuutua(3, 0, 2);
     }
     
+    /**
+     * Siirtää ruutuja selällään olevan 3-asennon palikan käännöksen edellyttämällä tavalla.
+     */
     private void kaannaSelallaanOlevaAsennon3L() {
         siirraRuutua(0, -1, 0);
         siirraRuutua(1, 0, 1);
@@ -179,7 +207,7 @@ public class LKaantaja extends PalikanKaantaja{
 * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
 * jos käännös onnistuu
 */
-    public boolean tarkistaOsuisikoAsennon0LSeinaanTaiPalikkaan() {
+    private boolean tarkistaOsuisikoAsennon0LSeinaanTaiPalikkaan() {
         if (mahallaan) {
             return tarkistaMahallaanOleva0AsennonL();
         }
@@ -187,6 +215,11 @@ public class LKaantaja extends PalikanKaantaja{
         return tarkistaSelallaanOleva0AsennonL();
     }
     
+    /**
+     * Tarkistaa mahallaan olevan 0-asennon palikan siirtojen mahdollisuuden.
+     * 
+     * @return Palauttaa true, jos tiellä on palikoita tai seinä, false jos siirto on mahdollinen.
+     */
     private boolean tarkistaMahallaanOleva0AsennonL() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, 2, -1)) {
             return true;
@@ -201,6 +234,11 @@ public class LKaantaja extends PalikanKaantaja{
         return false;
     }
     
+    /**
+     * Tarkistaa selällään olevan 0-asennon palikan siirtojen mahdollisuuden.
+     * 
+     * @return Palauttaa true, jos tiettä on palikoita tai seinä, false jos siirto on mahdollinen.
+     */
     private boolean tarkistaSelallaanOleva0AsennonL() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, 1, -2)) {
             return true;
@@ -220,7 +258,7 @@ public class LKaantaja extends PalikanKaantaja{
 * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
 * jos käännös onnistuu
 */
-    public boolean tarkistaOsuisikoAsennon1LSeinaanTaiPalikkaan() {
+    private boolean tarkistaOsuisikoAsennon1LSeinaanTaiPalikkaan() {
         if (mahallaan) {
             return tarkistaMahallaanOlevaAsennon1L();
         }
@@ -228,6 +266,11 @@ public class LKaantaja extends PalikanKaantaja{
         return tarkistaSelallaanOlevaAsennon1L();
     }
     
+    /**
+     * Tarkistaa mahallaan olevan 1-asennon palikan käännön mahdollisuuden.
+     * 
+     * @return Palauttaa true, jos tiellä on palikoita tai seinä, false jos käännös on mahdollista tehdä
+     */
     private boolean tarkistaMahallaanOlevaAsennon1L() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, 0, 2)) {
             return true;
@@ -242,6 +285,11 @@ public class LKaantaja extends PalikanKaantaja{
         return false;
     }
     
+    /**
+     * Tarkistaa selällään olevan 1-asennon palikan käännöksen mahdollisuuden.
+     * 
+     * @return Palauttaa true, jos tiellä on palikoita tai seinä, false, jos käännös on mahdollinen
+     */
     private boolean tarkistaSelallaanOlevaAsennon1L() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, 1, 1)) {
             return true;
@@ -260,7 +308,7 @@ public class LKaantaja extends PalikanKaantaja{
 * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
 * jos käännös onnistuu
 */
-    public boolean tarkistaOsuisikoAsennon2LSeinaanTaiPalikkaan() {
+    private boolean tarkistaOsuisikoAsennon2LSeinaanTaiPalikkaan() {
         if (mahallaan) {
             return tarkistaMahallaanOleva2AsennonL();
         }
@@ -268,6 +316,11 @@ public class LKaantaja extends PalikanKaantaja{
         return tarkistaSelallaanOleva2AsennonL();
     }
     
+    /**
+     * Tarkistaa mahallaan olevan 2-asennon palikan käännöksen mahdollisuuuden.
+     * 
+     * @return Palauttaa truem jos tiellä on palikoita tai seinä, false jos käännös voidaan tehdä. 
+     */
     private boolean tarkistaMahallaanOleva2AsennonL() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, -1, 0)) {
             return true;
@@ -282,6 +335,11 @@ public class LKaantaja extends PalikanKaantaja{
         return false;
     }
     
+    /**
+     * Tarkistaa selallaan olevan 2-asennon palikan käännöksen mahdollisuuden.
+     * 
+     * @return Palauttaa true, jos tiellä on palikoita tai seinä, false jos siirto voidaan tehdä.
+     */
     private boolean tarkistaSelallaanOleva2AsennonL() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, -1, 1)) {
             return true;
@@ -300,7 +358,7 @@ public class LKaantaja extends PalikanKaantaja{
 * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
 * jos käännös onnistuu
 */
-    public boolean tarkistaOsuisikoAsennon3LSeinaanTaiPalikkaan() {
+    private boolean tarkistaOsuisikoAsennon3LSeinaanTaiPalikkaan() {
         if (mahallaan) {
             return tarkistaMahallaanOlevaAsennon3L();
         }
@@ -308,6 +366,11 @@ public class LKaantaja extends PalikanKaantaja{
         return tarkistaSelallaanOlevaAsennon3L();
     }
     
+    /**
+     * Tarkistaa mahallaan olevan 3-asennon palikan käännöksen mahdollisuuden.
+     * 
+     * @return Palauttaa true, jos tiellä on palikoita tai seinä, false, jos käännös on mahdollinen
+     */
     private boolean tarkistaMahallaanOlevaAsennon3L() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, -1, -1)) {
             return true;
@@ -320,6 +383,11 @@ public class LKaantaja extends PalikanKaantaja{
         return false;
     }
     
+    /**
+     * Tarkistaa selällään olevan 3-asennon palikan käännöksen mahdollisuuden.
+     * 
+     * @return Palauttaa true, jos tiellä on palikka tai seinä, false jos käännös onnistuu
+     */
     private boolean tarkistaSelallaanOlevaAsennon3L() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, -1, 0)) {
             return true;

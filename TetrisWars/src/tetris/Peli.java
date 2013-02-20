@@ -31,8 +31,14 @@ public class Peli {
      */
     private Pistelaskenta pistelaskenta;
     
+    /**
+     * Totuusarvo, joka kertoo onko peli pausetettu.
+     */
     private boolean pause;
     
+    /**
+     * Merkkijono, johon kysytään arvo pelin päätyttyä ja käytetään pisteiden ylösottamiseen.
+     */
     private String kayttajanNimi;
     
     public Peli() {
@@ -69,19 +75,12 @@ public class Peli {
     
     /**
      * Metodi, joka aloittaa tetrispelin ja käyttää sitä, kunnes palikka pysähtyy ylimmälle riville.
+     * Tällöin kysytään pelaajan nimi ja odotetaan lisäohjeita seuraavaan toimintoon.
      */
     public void pelaaPeli() {
         while (true) {
-            synchronized (this) {
-                while (pause) {
-                    try {
-                        wait();
-                    } catch (InterruptedException e) {
-                        System.out.println("Virhe pausessa" + e.getMessage());
-                    }
-                }
-                
-            }
+            tarkistaPausetaanko();
+            
             try {
                 Thread.sleep(aikaLiikkeidenValissa);
             } catch (InterruptedException e) {
@@ -107,7 +106,32 @@ public class Peli {
             kayttoLiittyma.getPiirtoalusta().repaint();
         }
         
+        otaPisteetYlos();
+    }
+    
+    /**
+     * Tarkistetaan onko oliomuuttuja pause true, jos on, asetetaan peli odottamaan.
+     */
+    private void tarkistaPausetaanko() {
+        synchronized (this) {
+            while (pause) {
+                    
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                    System.out.println("Virhe pausessa" + e.getMessage());
+                }
+            }
+                
+        }
+    }
+    
+    /**
+     * Otetaan käyttäjän nimi ylös ja tallennetaan pisteet pistetilastoon.
+     */
+    private void otaPisteetYlos() {
         kayttoLiittyma.kysyNimi();
+        
         if (!kayttajanNimi.isEmpty()) {
             pistelaskenta.kirjaaPisteetYlos(kayttajanNimi);
         }
@@ -116,8 +140,11 @@ public class Peli {
         kayttoLiittyma.kysyLopetetaanko();
     }
     
+    /**
+     * Pienennetään aikaa palikan liikkeiden välissä, jolloin se putoaa nopeammin.
+     */
     private void nopeuta() {
-        if (aikaLiikkeidenValissa > 300) {
+        if (aikaLiikkeidenValissa > 200) {
             aikaLiikkeidenValissa -= 10;
         }
     }
@@ -136,7 +163,7 @@ public class Peli {
                 pistelaskenta.kasvataPisteita();
                 suoritaTuhoamisAnimaatio(i);
                 
-                laskeYlemmatRivit(i);
+                laskeYlemmatRivitYhdenAlas(i);
             }
         }
         
@@ -165,7 +192,7 @@ public class Peli {
      * 
      * @param rivinSijainti kertoo mistä korkeudesta ylemmät rivit on laskettava.
      */
-    private void laskeYlemmatRivit(int rivinSijainti) {
+    private void laskeYlemmatRivitYhdenAlas(int rivinSijainti) {
         kentta.tyhjennaRuudut(kentta.getRivit().get(rivinSijainti).getRuudut());
                 
         for (int j = rivinSijainti; j >= 0; j--) {

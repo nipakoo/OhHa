@@ -15,6 +15,11 @@ import java.util.Scanner;
  * @author albis
  */
 public class Pistelaskenta {
+    
+    /**
+     * Pelin pisteet reaaliajassa, joita kasvatetaan Peli-luokasta käsin aina, kun
+     * rivi tuhoutuu.
+     */
     private int pisteet;
     
     public Pistelaskenta() {

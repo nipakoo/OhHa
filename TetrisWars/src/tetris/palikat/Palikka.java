@@ -57,6 +57,12 @@ public  class Palikka {
      */
     private PalikanKaantaja palikanKaantaja;
     
+    /**
+     * Konstruktorissa arvotaan palikan tyyppi, jonka mukaan haetaan sille muoto ja asetetaan
+     * PalikanKaantaja oikeantyyppiseksi.
+     * 
+     * @param kentta Kentta-olio, jolla palikka liikkuu.
+     */
     public Palikka(Kentta kentta) {
         this.kentta = kentta;
         muodonLuoja = new MuodonLuoja(this);

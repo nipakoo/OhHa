@@ -41,6 +41,10 @@ public class PeliKayttoliittyma implements Runnable {
      */
     private int korkeus;
     
+    /**
+     * Käynnissä olevan pelin pistetilasto, tarvitaan jotta voidaan esittää piisteet sillä aikaa
+     * kun peli odottaa.
+     */
     private List<PisteTieto> pistetilasto;
     
     public PeliKayttoliittyma(Peli peli) {
@@ -72,7 +76,7 @@ public class PeliKayttoliittyma implements Runnable {
      * 
      * @throws FileNotFoundException 
      */
-    public void luoKomponentit() {
+    private void luoKomponentit() {
         frame.setLayout(new GridLayout(1, 3));
         piirtoalusta = new PeliPiirtoalusta(peli.getKentta(), korkeus / 20);
         
@@ -119,6 +123,10 @@ public class PeliKayttoliittyma implements Runnable {
         }
     }
     
+    /**
+     * Pelin pausettava, sekä mahdollisuudet pelin lopettamiseen, sekä huipputulosten katselemiseen
+     * tarjoava metodi.
+     */
     public void kysyLopetetaanko() {
         peli.pause();
         
@@ -140,6 +148,9 @@ public class PeliKayttoliittyma implements Runnable {
         }
     }
     
+    /**
+     * Käynnissä olevan pelin pistetilaston 10 parhaan tuloksen esitys.
+     */
     public void naytaPistetilasto() {
         String pistetilastoMerkkijono = "";
         

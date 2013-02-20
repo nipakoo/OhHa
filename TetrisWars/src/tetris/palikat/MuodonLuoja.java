@@ -54,7 +54,7 @@ public class MuodonLuoja {
      * Asettaa palikan ruudut niin, että muodostuu suorakulmio.
      * 
      * @param alkuX Ensimmäisen ruudun leveyskoordinaatti, jonka mukaan muut
-     * ruudut asetetaan.
+     * ruudut asetetaan
      * 
      * @return Muodostettu lista ruutuja
      */
@@ -70,7 +70,7 @@ public class MuodonLuoja {
      * Asettaa palikan ruudut niin, että muodostuu mutka.
      * 
      * @param alkuX Ensimmäisen ruudun leveyskoordinaatti, jonka mukaan muut
-     * ruudut asetetaan.
+     * ruudut asetetaan
      * 
      * @return Muodostettu lista ruutuja
      */
@@ -83,6 +83,13 @@ public class MuodonLuoja {
         return ruudut;
     }
     
+    /**
+     * Asettaa palikan ruudut niin, että muodostuu toisinpäin oleva mutka-palikka.
+     * 
+     * @param alkuX Ensimmäisen ruudun leveyskoordinaatti, jonka mukaan muut ruudut asetetaan
+     * 
+     * @return Muodostettu lista ruutuja
+     */
     public List<Ruutu> luoMutkaEriPain(int alkuX) {
         ruudut.add(palikka.getRuutu(alkuX, alkuY + 1));
         ruudut.add(palikka.getRuutu(alkuX + 1, alkuY + 1));
@@ -110,6 +117,13 @@ public class MuodonLuoja {
         return ruudut;
     }
     
+    /**
+     * Asettaa palikan ruudut niin, että muodostuu L, jonka sakara osoittaa oikealle ylös.
+     * 
+     * @param alkuX Ensimmäisen ruudun leveyskoordinaatti, jonka mukaan muut ruudut asetetaan
+     * 
+     * @return Muodostettu lista ruutuja
+     */
     public List<Ruutu> luoSelallaanOlevaL(int alkuX) {
         for (int i = 0; i < 3; i++) {
             ruudut.add(palikka.getRuutu(alkuX + i, alkuY + 1));

@@ -9,6 +9,9 @@ import tetris.palikat.Palikka;
  * @author albis
  */
 public class PalikanKaantaja {
+    /**
+     * Palikka-olio, jota kyseinen PalikanKaantaja kääntelee.
+     */
     protected Palikka palikka;
     
     public PalikanKaantaja(Palikka palikka) {

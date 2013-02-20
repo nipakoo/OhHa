@@ -3,12 +3,10 @@ package tetris.peliKayttoliittyma;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Graphics;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import tetris.Peli;
-import tetris.pelikentta.Ruutu;
 
 /**
  * Pistetilaston sekä tämän hetkisten pisteiden esittämisestä huolehtiva

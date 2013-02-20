@@ -34,7 +34,7 @@ public class SuorakulmionKaantaja extends PalikanKaantaja {
      * @return Palauttaa true, jos palikka osuisi seinään tai toiseen palikkaan ja false
      * jos kääntäminen onnistuu
      */
-    public boolean kaannaSuorakulmio() {
+    private boolean kaannaSuorakulmio() {
         int mistaAsennosta = 1;
         
         if (palikka.getAsento() == 1 || palikka.getAsento() == 3) {
@@ -62,7 +62,7 @@ public class SuorakulmionKaantaja extends PalikanKaantaja {
      * 
      * @return Jos palikan tiellä on täysiä ruutuja tai seinä palautetaan true, muuten false
      */
-    public boolean tarkistaOsuisikoSeinaanTaiPalikkaan(int mistaAsennosta) {
+    private boolean tarkistaOsuisikoSeinaanTaiPalikkaan(int mistaAsennosta) {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, mistaAsennosta * 1, mistaAsennosta * -1)) {
             return true;
         } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, mistaAsennosta * -1, mistaAsennosta * 1)) {

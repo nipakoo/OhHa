@@ -43,7 +43,7 @@ public class TKaantaja extends PalikanKaantaja {
      * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
      * jos käännös onnistuu
      */
-    public boolean kaannaAsennon0T() {
+    private boolean kaannaAsennon0T() {
         if (tarkistaOsuisikoAsennon0TSeinaanTaiPalikkaan()) {
             return true;
         }
@@ -62,7 +62,7 @@ public class TKaantaja extends PalikanKaantaja {
      * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
      * jos käännös onnistuu
      */
-    public boolean kaannaAsennon1T() {
+    private boolean kaannaAsennon1T() {
         if (tarkistaOsuisikoAsennon0TSeinaanTaiPalikkaan()) {
             return true;
         }
@@ -81,7 +81,7 @@ public class TKaantaja extends PalikanKaantaja {
      * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
      * jos käännös onnistuu
      */
-    public boolean kaannaAsennon2T() {
+    private boolean kaannaAsennon2T() {
         if (tarkistaOsuisikoAsennon2TSeinaanTaiPalikkaan()) {
             return true;
         }
@@ -100,7 +100,7 @@ public class TKaantaja extends PalikanKaantaja {
      * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
      * jos käännös onnistuu
      */
-    public boolean kaannaAsennon3T() {
+    private boolean kaannaAsennon3T() {
         if (tarkistaOsuisikoAsennon3TSeinaanTaiPalikkaan()) {
             return true;
         }
@@ -118,7 +118,7 @@ public class TKaantaja extends PalikanKaantaja {
      * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
      * jos käännös onnistuu
      */
-    public boolean tarkistaOsuisikoAsennon0TSeinaanTaiPalikkaan() {
+    private boolean tarkistaOsuisikoAsennon0TSeinaanTaiPalikkaan() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, 1, -1)) {
             return true;
         } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, -1, 1)) {
@@ -136,7 +136,7 @@ public class TKaantaja extends PalikanKaantaja {
      * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
      * jos käännös onnistuu
      */
-    public boolean tarkistaOsuisikoAsennon1TSeinaanTaiPalikkaan() {
+    private boolean tarkistaOsuisikoAsennon1TSeinaanTaiPalikkaan() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, 1, 1)) {
             return true;
         } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, -1, -1)) {
@@ -154,7 +154,7 @@ public class TKaantaja extends PalikanKaantaja {
      * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
      * jos käännös onnistuu
      */
-    public boolean tarkistaOsuisikoAsennon2TSeinaanTaiPalikkaan() {
+    private boolean tarkistaOsuisikoAsennon2TSeinaanTaiPalikkaan() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, -1, 1)) {
             return true;
         } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, 1, -1)) {
@@ -172,7 +172,7 @@ public class TKaantaja extends PalikanKaantaja {
      * @return Palauttaa true, jos palikka osuisi muihin ruutuihin tai seinään, false
      * jos käännös onnistuu
      */
-    public boolean tarkistaOsuisikoAsennon3TSeinaanTaiPalikkaan() {
+    private boolean tarkistaOsuisikoAsennon3TSeinaanTaiPalikkaan() {
         if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, -1, -1)) {
             return true;
         } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(2, 1, 1)) {
