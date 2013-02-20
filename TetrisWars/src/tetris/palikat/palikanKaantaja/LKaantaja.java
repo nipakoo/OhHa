@@ -202,7 +202,7 @@ public class LKaantaja extends PalikanKaantaja{
     }
     
     private boolean tarkistaSelallaanOleva0AsennonL() {
-        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, -1, 2)) {
+        if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(0, 1, -2)) {
             return true;
         } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(1, 0, -1)) {
             return true;
@@ -211,7 +211,7 @@ public class LKaantaja extends PalikanKaantaja{
         } else if (palikka.getPalikanLiikuttaja().osuisikoSeinaanTaiPalikkaan(3, 0, 1)) {
             return true;
         }
-        
+
         return false;
     }
     /**

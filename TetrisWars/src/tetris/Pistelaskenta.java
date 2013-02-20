@@ -41,7 +41,7 @@ public class Pistelaskenta {
         try {
             tallentaja = new FileWriter("pistetilasto.txt");
         } catch (IOException e) {
-            System.out.println("Virhe FileWriteria luotaessa!");
+            System.out.println("Virhe FileWriteria luotaessa!" + e.getMessage());
         }
         
         if (tallentaja == null) {
@@ -56,14 +56,14 @@ public class Pistelaskenta {
             try {
                 tallentaja.append("\n" + uusiPistetilasto.get(i));
             } catch (IOException e) {
-                System.out.println("Virhe pistetilastoa kirjoitettaessa!");
+                System.out.println("Virhe pistetilastoa kirjoitettaessa!" + e.getMessage());
             }
         }
         
         try {
             tallentaja.close();
         } catch (IOException e) {
-            System.out.println("Virhe FileWriteria sulkiessa!");
+            System.out.println("Virhe FileWriteria sulkiessa!" + e.getMessage());
         }
     }
     
@@ -81,7 +81,7 @@ public class Pistelaskenta {
         try {
             lukija = new Scanner(pistetilasto);
         } catch (FileNotFoundException e) {
-            System.out.println("Virhe tiedostoa luettaessa! Tiedostoa ei löytynyt.");
+            System.out.println("Virhe tiedostoa luettaessa! Tiedostoa ei löytynyt." + e.getMessage());
         }
         
         if (lukija == null) {

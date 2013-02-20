@@ -3,6 +3,7 @@ package tetris.peliKayttoliittyma;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.JFrame;
 import tetris.Peli;
 
 /**
@@ -17,11 +18,11 @@ public class PeliNappaimistonKuuntelija implements KeyListener {
      * Peli-olio, joka suorittaa toiminnot kun määritettyjä näppäimiä painetaan.
      */
     private Peli peli;
-    private Component component;
+    private PeliKayttoliittyma kayttoliittyma;
     
-    public PeliNappaimistonKuuntelija(Peli peli, Component component) {
+    public PeliNappaimistonKuuntelija(Peli peli, PeliKayttoliittyma kayttoliittyma) {
         this.peli = peli;
-        this.component = component;
+        this.kayttoliittyma = kayttoliittyma;
     }
 
     @Override
@@ -38,9 +39,11 @@ public class PeliNappaimistonKuuntelija implements KeyListener {
             peli.getKentta().liikutaPalikkaaVasemmalle();
         } else if (e.getKeyCode() == KeyEvent.VK_S) {
             peli.getKentta().pudotaPalikka();
+        } else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            kayttoliittyma.kysyLopetetaanko();
         }
         
-        component.repaint();
+        kayttoliittyma.getPiirtoalusta().repaint();
     }
 
     @Override

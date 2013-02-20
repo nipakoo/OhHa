@@ -31,12 +31,15 @@ public class Peli {
      */
     private Pistelaskenta pistelaskenta;
     
+    private boolean pause;
+    
     private String kayttajanNimi;
     
     public Peli() {
         kentta = new Kentta();
         aikaLiikkeidenValissa = 1000;
         pistelaskenta = new Pistelaskenta();
+        pause = false;
         kayttajanNimi = "";
     }
     
@@ -52,8 +55,16 @@ public class Peli {
         return pistelaskenta;
     }
     
-    public void setPiirtoalusta(PeliKayttoliittyma kayttoLiittyma) {
+    public void setKayttoliittyma(PeliKayttoliittyma kayttoLiittyma) {
         this.kayttoLiittyma = kayttoLiittyma;
+    }
+    
+    public void pause() {
+        pause = true;
+    }
+    
+    public void jatka() {
+        pause = false;
     }
     
     /**
@@ -61,10 +72,20 @@ public class Peli {
      */
     public void pelaaPeli() {
         while (true) {
+            synchronized (this) {
+                while (pause) {
+                    try {
+                        wait();
+                    } catch (InterruptedException e) {
+                        System.out.println("Virhe pausessa" + e.getMessage());
+                    }
+                }
+                
+            }
             try {
                 Thread.sleep(aikaLiikkeidenValissa);
             } catch (InterruptedException e) {
-                System.out.println("Virhe palikan liikkuessa alas!");
+                System.out.println("Virhe palikan liikkuessa alas!" + e.getMessage());
             }
 
             if (kentta.pysahtyykoPalikka()) {
@@ -90,6 +111,9 @@ public class Peli {
         if (!kayttajanNimi.isEmpty()) {
             pistelaskenta.kirjaaPisteetYlos(kayttajanNimi);
         }
+        kayttoLiittyma.setPistetilasto(pistelaskenta.luePistetilasto());
+        
+        kayttoLiittyma.kysyLopetetaanko();
     }
     
     private void nopeuta() {
@@ -132,7 +156,7 @@ public class Peli {
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
-            System.out.println("Virhe rivin tuhoutumisanimaatiota esittäessä!");
+            System.out.println("Virhe rivin tuhoutumisanimaatiota esittäessä!" + e.getMessage());
         }
     }
     
