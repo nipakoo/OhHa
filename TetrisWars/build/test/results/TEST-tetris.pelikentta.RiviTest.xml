@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="albis-AO756" name="tetris.pelikentta.RiviTest" tests="5" time="0.223" timestamp="2013-02-20T11:59:55">
+<testsuite errors="0" failures="0" hostname="albis-AO756" name="tetris.pelikentta.RiviTest" tests="5" time="0.098" timestamp="2013-02-20T12:04:35">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="nb.wait.for.caches" value="true" />
@@ -42,7 +42,7 @@
     <property name="copylibs.rebase" value="true" />
     <property name="manifest.available+main.class" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tetris.pelikentta.RiviTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/albis/OhHa/TetrisWars/build/test/results/TEST-tetris.pelikentta.RiviTest.xml crashfile=/home/albis/OhHa/TetrisWars/build/junitvmwatcher2366538567689798477.properties propsfile=/home/albis/OhHa/TetrisWars/build/junit4317202450226836626.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tetris.pelikentta.RiviTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/albis/OhHa/TetrisWars/build/test/results/TEST-tetris.pelikentta.RiviTest.xml crashfile=/home/albis/OhHa/TetrisWars/build/junitvmwatcher2372818995498433986.properties propsfile=/home/albis/OhHa/TetrisWars/build/junit1666297058130119242.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="jnlp.descriptor" value="application" />
@@ -301,11 +301,11 @@
     <property name="javadoc.nonavbar" value="false" />
     <property name="platform.active" value="default_platform" />
   </properties>
-  <testcase classname="tetris.pelikentta.RiviTest" name="oikeaMaaraRuutuja" time="0.014" />
-  <testcase classname="tetris.pelikentta.RiviTest" name="ruutujenKorkeusOikein" time="0.0010" />
-  <testcase classname="tetris.pelikentta.RiviTest" name="tuhoutuukoPalauttaaTrueOikein" time="0.0" />
-  <testcase classname="tetris.pelikentta.RiviTest" name="tuhoutuukoPalauttaaFalseOikein" time="0.0010" />
-  <testcase classname="tetris.pelikentta.RiviTest" name="laskeeRivinKorkeuden" time="0.0010" />
+  <testcase classname="tetris.pelikentta.RiviTest" name="oikeaMaaraRuutuja" time="0.0030" />
+  <testcase classname="tetris.pelikentta.RiviTest" name="ruutujenKorkeusOikein" time="0.0" />
+  <testcase classname="tetris.pelikentta.RiviTest" name="tuhoutuukoPalauttaaTrueOikein" time="0.0010" />
+  <testcase classname="tetris.pelikentta.RiviTest" name="tuhoutuukoPalauttaaFalseOikein" time="0.0" />
+  <testcase classname="tetris.pelikentta.RiviTest" name="laskeeRivinKorkeuden" time="0.0" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

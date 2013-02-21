@@ -1,16 +1,15 @@
-Aihe: Moninpelattava Tetris
+Aihe: Tetris
 
-Toteutan Tetris-pelin, joka yksinpelin lisäksi tarjoaa mahdollisuuden pelata muita pelaajia vastaan reaaliajassa. Moninpelissä voittaja on luonnollisesti pelaaja, joka on viimeisenä jäljellä ja tällöinkin hän tietysti voi pelata niin pitkälle kuin pääsee, jottai voi tavoitella paikkaa pistetilastossa.
+Tetris peli, jossa tarkoituksen tuttuun tapaan saada rivejä täyteen, jolloin rivi tuhoutuu ja estää palikoiden tasoa nousemasta ylös asti. (Alunperin oli tarkoitus tehdä moninpeli, mutta ei riittänyt aika)
 
 Käyttäjät: Pelaaja
 
 Käyttäjien toiminnot:
-	– huipputulosten tarkastelu
 	– pelin aloitus
-		-yksinpeli
-		-moninpeli
+		-huipputulosten tarkastelu
 		-palikan liikuttaminen ja kääntäminen
 		-pause
+		-lopetus
 
 		
 

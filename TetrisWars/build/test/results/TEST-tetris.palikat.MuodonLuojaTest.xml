@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="albis-AO756" name="tetris.palikat.MuodonLuojaTest" tests="9" time="0.156" timestamp="2013-02-20T11:59:50">
+<testsuite errors="0" failures="0" hostname="albis-AO756" name="tetris.palikat.MuodonLuojaTest" tests="9" time="0.123" timestamp="2013-02-20T12:04:32">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="nb.wait.for.caches" value="true" />
@@ -42,7 +42,7 @@
     <property name="copylibs.rebase" value="true" />
     <property name="manifest.available+main.class" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tetris.palikat.MuodonLuojaTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/albis/OhHa/TetrisWars/build/test/results/TEST-tetris.palikat.MuodonLuojaTest.xml crashfile=/home/albis/OhHa/TetrisWars/build/junitvmwatcher5707359379142574040.properties propsfile=/home/albis/OhHa/TetrisWars/build/junit8295426130131081524.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner tetris.palikat.MuodonLuojaTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/albis/OhHa/TetrisWars/build/test/results/TEST-tetris.palikat.MuodonLuojaTest.xml crashfile=/home/albis/OhHa/TetrisWars/build/junitvmwatcher3259140380787694605.properties propsfile=/home/albis/OhHa/TetrisWars/build/junit299570470740921232.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="jnlp.descriptor" value="application" />
@@ -303,11 +303,11 @@
   </properties>
   <testcase classname="tetris.palikat.MuodonLuojaTest" name="korkeusAsettuuOikein" time="0.0090" />
   <testcase classname="tetris.palikat.MuodonLuojaTest" name="leveysAsettuuOikein" time="0.0" />
-  <testcase classname="tetris.palikat.MuodonLuojaTest" name="nelioMuodostuuOikein" time="0.0010" />
-  <testcase classname="tetris.palikat.MuodonLuojaTest" name="suorakulmioMuodostuuOikein" time="0.0010" />
+  <testcase classname="tetris.palikat.MuodonLuojaTest" name="nelioMuodostuuOikein" time="0.0" />
+  <testcase classname="tetris.palikat.MuodonLuojaTest" name="suorakulmioMuodostuuOikein" time="0.0" />
   <testcase classname="tetris.palikat.MuodonLuojaTest" name="mutkaMuodostuuOikein" time="0.0" />
   <testcase classname="tetris.palikat.MuodonLuojaTest" name="mutkaToisinPainMuodostuuOikein" time="0.0" />
-  <testcase classname="tetris.palikat.MuodonLuojaTest" name="LMahallaanMuodostuuOikein" time="0.0" />
+  <testcase classname="tetris.palikat.MuodonLuojaTest" name="LMahallaanMuodostuuOikein" time="0.0010" />
   <testcase classname="tetris.palikat.MuodonLuojaTest" name="LSelallaanMuodostuuOikein" time="0.0" />
   <testcase classname="tetris.palikat.MuodonLuojaTest" name="TMuodotuuOikein" time="0.0010" />
   <system-out><![CDATA[]]></system-out>
