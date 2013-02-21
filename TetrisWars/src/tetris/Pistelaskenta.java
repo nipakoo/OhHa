@@ -86,7 +86,7 @@ public class Pistelaskenta {
         try {
             lukija = new Scanner(pistetilasto);
         } catch (FileNotFoundException e) {
-            System.out.println("Virhe tiedostoa luettaessa! Tiedostoa ei löytynyt." + e.getMessage());
+            System.out.println("Virhe tiedostoa luettaessa! Tiedostoa ei löytynyt. Luodaan." + e.getMessage());
         }
         
         if (lukija == null) {
